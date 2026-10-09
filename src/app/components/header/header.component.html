@@ -1,0 +1,19 @@
+<header class="fixed top-0 left-0 w-full z-[1000] glass-panel border-t-0 border-x-0 rounded-none bg-dark/60">
+  <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+    <div class="logo">
+      <a routerLink="/" class="font-heading text-2xl font-extrabold text-white no-underline">⚡ Tensor.Dev</a>
+    </div>
+    
+    <nav class="hidden md:flex gap-8">
+      <a routerLink="/" routerLinkActive="text-white" [routerLinkActiveOptions]="{exact: true}" class="text-slate-400 font-medium hover:text-white transition-colors">Inicio</a>
+      <a routerLink="/servicios" routerLinkActive="text-white" class="text-slate-400 font-medium hover:text-white transition-colors">Servicios</a>
+      <a routerLink="/nosotros" routerLinkActive="text-white" class="text-slate-400 font-medium hover:text-white transition-colors">Nosotros</a>
+      <a routerLink="/labs" routerLinkActive="text-white" class="text-slate-400 font-medium hover:text-white transition-colors">Labs</a>
+      <a routerLink="/contacto" routerLinkActive="text-white" class="text-slate-400 font-medium hover:text-white transition-colors">Contacto</a>
+    </nav>
+    
+    <div class="header-actions">
+      <a routerLink="/contacto" class="btn btn-primary">Solicitar Auditoría</a>
+    </div>
+  </div>
+</header>

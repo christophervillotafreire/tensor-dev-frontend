@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-slate-200 font-sans antialiased min-h-screen flex flex-col;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-white font-semibold leading-tight;
+  }
+  h1 { @apply text-5xl font-extrabold tracking-tight; }
+  h2 { @apply text-4xl; }
+  h3 { @apply text-2xl; }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-br from-blue-400 to-purple-400 bg-clip-text text-transparent;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-all duration-200 font-sans text-base decoration-transparent;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-br from-primary to-accent text-white shadow-[0_4px_15px_rgba(59,130,246,0.2)] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(59,130,246,0.4)];
+  }
+  .btn-outline {
+    @apply bg-transparent text-slate-200 border border-white/15 hover:bg-white/5 hover:border-slate-200;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 bg-card border border-white/10 rounded-lg text-slate-200 font-sans transition-colors duration-200 focus:outline-none focus:border-primary disabled:opacity-70 disabled:cursor-not-allowed;
+  }
+  .section {
+    @apply py-20;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

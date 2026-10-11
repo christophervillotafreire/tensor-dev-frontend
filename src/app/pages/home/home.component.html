@@ -24,22 +24,24 @@
 
     <!-- Seamless Bottom Blend & Contrast Vignette -->
     <div class="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-void via-void/60 to-transparent"></div>
-    <div class="pointer-events-none absolute inset-y-0 left-0 w-full max-w-3xl bg-gradient-to-r from-void/85 via-void/40 to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-full max-w-4xl lg:max-w-5xl bg-gradient-to-r from-void/90 via-void/50 to-transparent"></div>
     <div class="pointer-events-none absolute inset-0 subtle-grid opacity-[0.12]"></div>
     
     <!-- Accent Quantum Radial Glow -->
     <div class="pointer-events-none absolute right-1/4 top-1/3 h-[600px] w-[600px] rounded-full bg-quantum/15 blur-[140px]"></div>
 
     <div class="relative z-10 w-full">
-      <div class="investor-container flex min-h-[78vh] items-end pb-20 pt-24 md:min-h-screen md:pb-24">
-        <div class="max-w-5xl">
-          <p class="eyebrow mb-4 md:mb-6">Ingeniería de Software & Analítica Aplicada</p>
-          <h1 class="section-title max-w-6xl text-4xl md:text-5xl text-balance">
+      <div class="investor-container flex min-h-[78vh] items-end pb-20 pt-24 md:min-h-screen md:pb-28">
+        <div class="max-w-4xl lg:max-w-5xl">
+          <p class="font-mono text-xs sm:text-sm uppercase tracking-[0.22em] text-quantum mb-4 md:mb-6 font-medium">
+            Ingeniería de Software & Analítica Aplicada
+          </p>
+          <h1 class="font-display font-medium md:font-semibold text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[5.6rem] text-white tracking-[-0.03em] leading-[1.04] text-left">
             Transformando operaciones complejas en sistemas transaccionales inteligentes.
           </h1>
           
-          <div class="mt-12 flex flex-col sm:flex-row gap-6">
-            <a routerLink="/contacto" class="button-ghost bg-white text-void border-text-primary hover:bg-white/90 hover:text-void">Auditar Infraestructura</a>
+          <div class="mt-8 md:mt-12 flex flex-col sm:flex-row items-start gap-6">
+            <a routerLink="/contacto" class="button-ghost bg-white text-void border-text-primary hover:bg-white/90 hover:text-void font-semibold">Auditar Infraestructura</a>
             <a routerLink="/labs" class="button-link text-sm uppercase tracking-[0.16em]">Explorar Sandbox <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
           </div>
         </div>
@@ -57,25 +59,35 @@
   <div class="h-px bg-gradient-to-r from-transparent via-quantum/30 to-transparent"></div>
 
   <!-- Tech Stack Section -->
-  <section class="bg-deep">
-    <div class="investor-container py-24 md:py-32">
-      <div class="grid items-center gap-12 md:grid-cols-[55%_45%] md:gap-16">
-        <div>
-          <p class="eyebrow">Nuestro Stack</p>
-          <h2 class="section-title mt-6 text-3xl md:text-4xl text-balance">Desarrollo determinista construido sobre tecnología escalable.</h2>
-          
-          <div class="mt-10">
-            <div class="metric-pill flex-wrap justify-center md:justify-start">
-              <span>Python (FastAPI)</span>
-              <span class="metric-divider"></span>
-              <span>React & Tailwind</span>
-              <span class="metric-divider"></span>
-              <span>AWS Cloud</span>
-              <span class="metric-divider"></span>
-              <span>PostgreSQL</span>
-              <span class="metric-divider"></span>
-              <span>RAG / LLMs</span>
-            </div>
+  <section class="relative bg-deep overflow-hidden border-t border-subtle/10 py-24 md:py-32 lg:py-36">
+    <!-- Subtle ambient lighting -->
+    <div class="pointer-events-none absolute -left-20 top-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-quantum/10 blur-[130px]"></div>
+
+    <div class="investor-container w-full relative z-10">
+      <div class="w-full">
+        <p class="font-mono text-xs sm:text-sm lg:text-base uppercase tracking-[0.24em] text-quantum font-semibold">
+          Nuestro Stack
+        </p>
+
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] font-bold tracking-[-0.025em] leading-[1.08] text-white mt-6 max-w-6xl text-left">
+          Desarrollo determinista construido sobre tecnología escalable.
+        </h2>
+        
+        <div class="mt-12 lg:mt-16 w-full">
+          <div class="inline-flex flex-wrap items-center gap-x-5 sm:gap-x-6 gap-y-3 rounded-2xl sm:rounded-full border border-subtle/15 bg-void/70 px-7 sm:px-10 py-4 sm:py-5 text-sm sm:text-base lg:text-lg font-mono uppercase tracking-[0.18em] text-quantum shadow-xl backdrop-blur-md ring-1 ring-white/5">
+            <span class="hover:text-white transition-colors duration-200">Python (FastAPI)</span>
+            <span class="h-1.5 w-1.5 rounded-full bg-quantum/50"></span>
+            <span class="hover:text-white transition-colors duration-200">Machine Learning</span>
+            <span class="h-1.5 w-1.5 rounded-full bg-quantum/50"></span>
+            <span class="hover:text-white transition-colors duration-200">Física Aplicada</span>
+            <span class="h-1.5 w-1.5 rounded-full bg-quantum/50"></span>
+            <span class="hover:text-white transition-colors duration-200">RAG / LLMs</span>
+            <span class="h-1.5 w-1.5 rounded-full bg-quantum/50"></span>
+            <span class="hover:text-white transition-colors duration-200">React & Tailwind</span>
+            <span class="h-1.5 w-1.5 rounded-full bg-quantum/50"></span>
+            <span class="hover:text-white transition-colors duration-200">AWS Cloud</span>
+            <span class="h-1.5 w-1.5 rounded-full bg-quantum/50"></span>
+            <span class="hover:text-white transition-colors duration-200">PostgreSQL</span>
           </div>
         </div>
       </div>
@@ -85,15 +97,53 @@
   <!-- Capabilities Section (Numbered) -->
   <section class="border-t border-subtle/10">
     <div class="border-b border-subtle/10">
-      <div class="investor-container grid min-h-[55vh] items-center gap-10 py-16 md:grid-cols-[40%_60%]">
-        <div>
-          <p class="font-mono text-5xl md:text-6xl leading-none text-quantum/15">01</p>
-          <p class="tech-label mt-3 text-sm text-quantum/60">Transaccional</p>
+      <div class="investor-container grid min-h-[65vh] items-center gap-10 lg:gap-14 xl:gap-16 py-20 lg:py-28 lg:grid-cols-12">
+        <!-- Columna de Información (alineada a la izquierda) -->
+        <div class="lg:col-span-5 xl:col-span-5 flex flex-col justify-center space-y-5 sm:space-y-7 lg:pr-4">
+          <div class="flex items-center gap-4 sm:gap-5">
+            <span class="font-mono text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-none text-quantum/30 select-none">01</span>
+            <div class="h-8 sm:h-10 w-px bg-quantum/25"></div>
+            <span class="font-mono text-sm sm:text-base lg:text-lg uppercase tracking-[0.22em] text-quantum font-semibold">Transaccional</span>
+          </div>
+
+          <h3 class="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-[-0.02em] leading-[1.08] text-white">
+            Sistemas Transaccionales.
+          </h3>
+
+          <p class="text-lg sm:text-xl lg:text-[1.35rem] xl:text-[1.5rem] leading-relaxed text-text-muted font-normal max-w-lg">
+            Desarrollo web y dashboards reactivos a la medida con APIs asíncronas de baja latencia e integridad relacional.
+          </p>
+
+          <div class="pt-2">
+            <a class="button-link group inline-flex items-center gap-3 text-base sm:text-lg uppercase tracking-[0.18em] text-quantum transition-colors duration-300 hover:text-white" routerLink="/servicios">
+              <span>Arquitectura Web</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-5 w-5 transition-transform duration-300 group-hover:translate-x-2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
         </div>
-        <div>
-          <h3 class="section-title text-3xl md:text-4xl">Sistemas Transaccionales.</h3>
-          <p class="mt-5 max-w-2xl text-base leading-8 text-text-muted">Desarrollo web y dashboards reactivos a la medida con APIs asíncronas de baja latencia e integridad relacional.</p>
-          <a class="button-link mt-8 text-sm uppercase tracking-[0.16em]" routerLink="/servicios">Arquitectura Web <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+
+        <!-- Columna de Imagen (espacio ampliado hacia la derecha con WebP) -->
+        <div class="lg:col-span-7 xl:col-span-7 flex items-center justify-center lg:justify-end w-full">
+          <div class="relative group w-full">
+            <!-- Quantum Ambient Glow -->
+            <div class="pointer-events-none absolute -inset-3 rounded-3xl bg-gradient-to-tr from-quantum/25 via-quantum/10 to-transparent blur-2xl opacity-60 transition-opacity duration-700 group-hover:opacity-90"></div>
+            <div class="pointer-events-none absolute -top-8 -right-8 h-64 w-64 rounded-full bg-quantum/15 blur-3xl"></div>
+
+            <!-- Frame del Dashboard -->
+            <div class="relative overflow-hidden rounded-2xl border border-subtle/20 bg-[#07070d]/90 shadow-2xl ring-1 ring-white/10 backdrop-blur-md transition-all duration-500 group-hover:border-quantum/50 group-hover:shadow-quantum/20">
+              <picture>
+                <source srcset="transaccional.webp" type="image/webp" />
+                <source srcset="transaccional.jpeg" type="image/jpeg" />
+                <img
+                  src="transaccional.webp"
+                  (error)="$any($event.target).src = 'transaccional.jpeg'"
+                  alt="Dashboard reactivo de Sistemas Transaccionales"
+                  class="w-full h-auto object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </div>
         </div>
       </div>
     </div>

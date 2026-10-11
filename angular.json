@@ -24,6 +24,26 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "transaccional.jpeg",
+                "input": "src/app/pages/home",
+                "output": ""
+              },
+              {
+                "glob": "transaccional.webp",
+                "input": "src/app/pages/home",
+                "output": ""
+              },
+              {
+                "glob": "transaccional.jpeg",
+                "input": "src/app/pages/home",
+                "output": "assets"
+              },
+              {
+                "glob": "transaccional.webp",
+                "input": "src/app/pages/home",
+                "output": "assets"
               }
             ],
             "styles": [

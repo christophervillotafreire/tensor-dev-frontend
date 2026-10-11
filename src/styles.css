@@ -5,18 +5,9 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    /* Light Mode (default) */
-    --bg-void: 255 255 255; /* white */
-    --bg-deep: 244 244 245; /* zinc-100 */
-    --text-primary: 9 9 11; /* zinc-950 */
-    --text-muted: 113 113 122; /* zinc-500 */
-    --accent-quantum: 0 102 255; /* deep blue for visibility */
-    --border-subtle: 0 0 0; /* black */
-  }
-  
+  :root,
   .dark {
-    /* Dark Mode */
+    /* Dark Mode permanente */
     --bg-void: 5 5 9;
     --bg-deep: 10 10 15;
     --text-primary: 255 255 255;
@@ -41,7 +32,7 @@
 
 @layer components {
   .investor-container {
-    @apply max-w-7xl mx-auto px-6 md:px-12 lg:px-24;
+    @apply max-w-[1600px] mx-auto px-6 sm:px-10 md:px-12 lg:px-16;
   }
   
   .eyebrow {

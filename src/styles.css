@@ -1,52 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Light Mode (default) */
+    --bg-void: 255 255 255; /* white */
+    --bg-deep: 244 244 245; /* zinc-100 */
+    --text-primary: 9 9 11; /* zinc-950 */
+    --text-muted: 113 113 122; /* zinc-500 */
+    --accent-quantum: 0 102 255; /* deep blue for visibility */
+    --border-subtle: 0 0 0; /* black */
+  }
+  
+  .dark {
+    /* Dark Mode */
+    --bg-void: 5 5 9;
+    --bg-deep: 10 10 15;
+    --text-primary: 255 255 255;
+    --text-muted: 161 161 170;
+    --accent-quantum: 0 229 255;
+    --border-subtle: 255 255 255;
+  }
+  
   body {
-    @apply bg-dark text-slate-200 font-sans antialiased min-h-screen flex flex-col;
+    @apply bg-void text-text-primary font-sans antialiased min-h-screen flex flex-col transition-colors duration-300;
   }
+  
+  ::selection {
+    background-color: rgb(var(--accent-quantum) / 0.3);
+    color: rgb(var(--text-primary));
+  }
+  
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading text-white font-semibold leading-tight;
+    @apply font-display text-text-primary leading-tight tracking-[-0.01em];
   }
-  h1 { @apply text-5xl font-extrabold tracking-tight; }
-  h2 { @apply text-4xl; }
-  h3 { @apply text-2xl; }
 }
 
 @layer components {
-  .glass-panel {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
+  .investor-container {
+    @apply max-w-7xl mx-auto px-6 md:px-12 lg:px-24;
   }
-  .text-gradient {
-    @apply bg-gradient-to-br from-blue-400 to-purple-400 bg-clip-text text-transparent;
+  
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.18em] text-text-muted;
   }
-  .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-all duration-200 font-sans text-base decoration-transparent;
+  
+  .section-title {
+    @apply font-display text-balance;
   }
-  .btn-primary {
-    @apply bg-gradient-to-br from-primary to-accent text-white shadow-[0_4px_15px_rgba(59,130,246,0.2)] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(59,130,246,0.4)];
+  
+  .button-link {
+    @apply inline-flex items-center gap-2 text-quantum transition-colors hover:text-white;
   }
-  .btn-outline {
-    @apply bg-transparent text-slate-200 border border-white/15 hover:bg-white/5 hover:border-slate-200;
+  
+  .button-ghost {
+    @apply inline-flex h-12 items-center justify-center rounded border border-subtle/10 bg-transparent px-8 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:border-quantum/50 hover:bg-quantum/5 hover:text-quantum;
   }
-  .input-field {
-    @apply w-full px-4 py-3 bg-card border border-white/10 rounded-lg text-slate-200 font-sans transition-colors duration-200 focus:outline-none focus:border-primary disabled:opacity-70 disabled:cursor-not-allowed;
+
+  .form-line {
+    @apply w-full border-b border-subtle/10 bg-transparent px-0 py-4 text-white placeholder-text-muted transition-colors focus:border-quantum focus:outline-none focus:ring-0;
   }
-  .section {
-    @apply py-20;
+  
+  .tech-label {
+    @apply font-mono uppercase tracking-[0.16em];
+  }
+  
+  .metric-pill {
+    @apply inline-flex items-center gap-4 rounded-full border border-subtle/10 bg-deep/50 px-6 py-2 text-xs uppercase tracking-[0.18em] text-quantum backdrop-blur-sm;
+  }
+  
+  .metric-divider {
+    @apply h-1 w-1 rounded-full bg-subtle/20;
   }
 }
 
 @layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
+  .subtle-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgb(var(--text-primary) / 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgb(var(--text-primary) / 0.05) 1px, transparent 1px);
   }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
 }

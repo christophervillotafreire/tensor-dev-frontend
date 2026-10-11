@@ -3,21 +3,21 @@ module.exports = {
   content: [
     "./src/**/*.{html,ts}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        dark: '#0f1115',
-        card: '#181a20',
-        'card-hover': '#1f2229',
-        primary: '#3b82f6',
-        'primary-hover': '#2563eb',
-        accent: '#8b5cf6',
-        'accent-light': '#c4b5fd',
-        success: '#10b981',
+        void: 'rgb(var(--bg-void) / <alpha-value>)',
+        deep: 'rgb(var(--bg-deep) / <alpha-value>)',
+        'text-primary': 'rgb(var(--text-primary) / <alpha-value>)',
+        'text-muted': 'rgb(var(--text-muted) / <alpha-value>)',
+        quantum: 'rgb(var(--accent-quantum) / <alpha-value>)',
+        subtle: 'rgb(var(--border-subtle) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        heading: ['Outfit', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
     },
   },

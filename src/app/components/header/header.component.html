@@ -1,19 +1,25 @@
-<header class="fixed top-0 left-0 w-full z-[1000] glass-panel border-t-0 border-x-0 rounded-none bg-dark/60">
-  <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
-    <div class="logo">
-      <a routerLink="/" class="font-heading text-2xl font-extrabold text-white no-underline">⚡ Tensor.Dev</a>
-    </div>
+<header class="fixed inset-x-0 top-0 z-[120] h-16 border-b transition-all duration-300 bg-void/80 backdrop-blur-md border-subtle/10">
+  <div class="investor-container flex h-full items-center justify-between">
+    <a routerLink="/" class="flex items-center gap-3 text-text-primary no-underline">
+      <img src="logo.jpg" alt="Tensor.Dev Logo" class="h-12 w-auto rounded-md" />
+      <span class="font-display text-lg tracking-[-0.02em] text-text-primary">Tensor.Dev</span>
+    </a>
     
-    <nav class="hidden md:flex gap-8">
-      <a routerLink="/" routerLinkActive="text-white" [routerLinkActiveOptions]="{exact: true}" class="text-slate-400 font-medium hover:text-white transition-colors">Inicio</a>
-      <a routerLink="/servicios" routerLinkActive="text-white" class="text-slate-400 font-medium hover:text-white transition-colors">Servicios</a>
-      <a routerLink="/nosotros" routerLinkActive="text-white" class="text-slate-400 font-medium hover:text-white transition-colors">Nosotros</a>
-      <a routerLink="/labs" routerLinkActive="text-white" class="text-slate-400 font-medium hover:text-white transition-colors">Labs</a>
-      <a routerLink="/contacto" routerLinkActive="text-white" class="text-slate-400 font-medium hover:text-white transition-colors">Contacto</a>
+    <nav class="hidden items-center gap-8 md:flex">
+      <a routerLink="/" routerLinkActive="text-text-primary" [routerLinkActiveOptions]="{exact: true}" class="inline-flex items-center font-sans text-[12px] font-normal uppercase leading-none tracking-[0.18em] text-text-muted transition-colors hover:text-text-primary">Inicio</a>
+      <a routerLink="/servicios" routerLinkActive="text-text-primary" class="inline-flex items-center font-sans text-[12px] font-normal uppercase leading-none tracking-[0.18em] text-text-muted transition-colors hover:text-text-primary">Servicios</a>
+      <a routerLink="/nosotros" routerLinkActive="text-text-primary" class="inline-flex items-center font-sans text-[12px] font-normal uppercase leading-none tracking-[0.18em] text-text-muted transition-colors hover:text-text-primary">Nosotros</a>
+      <a routerLink="/labs" routerLinkActive="text-text-primary" class="inline-flex items-center font-sans text-[12px] font-normal uppercase leading-none tracking-[0.18em] text-text-muted transition-colors hover:text-text-primary">Labs</a>
+      <a routerLink="/contacto" routerLinkActive="text-text-primary" class="inline-flex items-center font-sans text-[12px] font-normal uppercase leading-none tracking-[0.18em] text-text-muted transition-colors hover:text-text-primary">Contacto</a>
     </nav>
     
-    <div class="header-actions">
-      <a routerLink="/contacto" class="btn btn-primary">Solicitar Auditoría</a>
+    <div class="hidden md:flex items-center gap-4">
+      <button (click)="toggleTheme()" class="text-text-muted hover:text-text-primary transition-colors focus:outline-none" aria-label="Toggle Theme">
+        <!-- Sun icon for dark mode (click to light), Moon icon for light mode (click to dark) -->
+        <svg *ngIf="isDarkMode" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <svg *ngIf="!isDarkMode" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+      <a routerLink="/contacto" class="button-ghost !h-9 !px-4 !text-[11px]">Auditoría</a>
     </div>
   </div>
 </header>

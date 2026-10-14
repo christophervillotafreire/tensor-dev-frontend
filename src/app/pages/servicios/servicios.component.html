@@ -1,147 +1,218 @@
-<div class="pt-20 animate-fade-in">
-  <div class="max-w-7xl mx-auto px-8 section text-center">
-    <h1 class="mb-4">Portafolio Técnico y <span class="text-gradient">Metodología</span></h1>
-    <p class="text-slate-400 max-w-2xl mx-auto mb-16 text-lg">
-      Infraestructura reactiva, automatización cognitiva y modelos numéricos adaptados al contexto regional.
-    </p>
+<div class="pt-28 sm:pt-36 pb-24 relative overflow-hidden">
+  <!-- Ambient background glow -->
+  <div class="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-quantum/[0.08] blur-[150px]"></div>
 
-    <!-- Services Detailed -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-left">
-      <div class="glass-panel p-8">
-        <h3 class="mb-3">💻 LÍNEA 1: SISTEMAS WEB</h3>
-        <p class="text-slate-400 mb-6">Arquitectura transaccional diseñada para escalabilidad y baja latencia.</p>
-        <div class="mb-6">
-          <strong class="text-white">Capacidades clave:</strong>
-          <ul class="text-sm text-slate-400 mt-3 space-y-2">
-            <li>• Frontends reactivos en React & Tailwind</li>
-            <li>• Microservicios REST/Async en FastAPI</li>
-            <li>• Modelado relacional ACID en PostgreSQL</li>
-            <li>• Aislamiento por contenedores Docker</li>
-            <li>• Cifrado de credenciales y tokens JWT</li>
-          </ul>
+  <div class="investor-container relative z-10">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <p class="eyebrow">Arquitectura & Metodología</p>
+      <h1 class="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.035em] text-white">
+        Portafolio Técnico y <span class="bg-gradient-to-r from-white via-cyan-100 to-quantum bg-clip-text text-transparent">Metodología</span>
+      </h1>
+      <p class="mt-6 text-base sm:text-lg text-zinc-400 leading-relaxed">
+        Infraestructura reactiva, automatización cognitiva y modelos numéricos rigurosos adaptados a operaciones empresariales críticas.
+      </p>
+    </div>
+
+    <!-- Services 3 Columns (Apple Glass Bento) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+      <div class="glass-panel p-8 sm:p-10 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="font-mono text-2xl font-bold text-quantum/60">01</span>
+            <span class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold">Sistemas Web</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">Arquitectura Transaccional</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+            Desarrollo web y dashboards reactivos a la medida con microservicios asíncronos en FastAPI e integridad relacional.
+          </p>
+          <div class="border-t border-white/[0.06] pt-5 mb-6">
+            <p class="text-xs uppercase font-mono tracking-wider text-zinc-300 font-semibold mb-3">Capacidades Clave:</p>
+            <ul class="text-xs text-zinc-400 space-y-2.5 font-sans">
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Frontends reactivos en React & Tailwind</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Microservicios REST/Async en FastAPI</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Modelado relacional ACID en PostgreSQL</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Aislamiento por contenedores Docker</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Cifrado de credenciales y tokens JWT</li>
+            </ul>
+          </div>
         </div>
-        <p class="text-sm"><strong class="text-white">Entregables:</strong> Dashboard de control, APIs documentadas y repositorios versionados con CI/CD.</p>
+        <p class="text-xs text-zinc-400 border-t border-white/[0.06] pt-4 font-mono">
+          <strong class="text-white">Entregables:</strong> Dashboard de control, APIs documentadas y repositorios versionados CI/CD.
+        </p>
       </div>
 
-      <div class="glass-panel p-8">
-        <h3 class="mb-3">🤖 LÍNEA 2: AGENTES NLP</h3>
-        <p class="text-slate-400 mb-6">Sistemas conversacionales y enrutamiento inteligente de mensajes corporativos.</p>
-        <div class="mb-6">
-          <strong class="text-white">Capacidades clave:</strong>
-          <ul class="text-sm text-slate-400 mt-3 space-y-2">
-            <li>• Chatbots integrados a WhatsApp API oficial</li>
-            <li>• RAG con embeddings en bases vectoriales</li>
-            <li>• Clasificación semántica de correo entrante</li>
-            <li>• Enrutamiento por reglas de negocio</li>
-            <li>• Protocolo estricto de derivación a humanos</li>
-          </ul>
+      <div class="glass-panel p-8 sm:p-10 flex flex-col justify-between ring-1 ring-quantum/30 shadow-[0_0_40px_-10px_rgba(0,229,255,0.2)]">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="font-mono text-2xl font-bold text-quantum/60">02</span>
+            <span class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold">Cognición & NLP</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">Agentes de IA & RAG</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+            Sistemas conversacionales y enrutamiento inteligente de mensajes corporativos con derivación asistida a operadores humanos.
+          </p>
+          <div class="border-t border-white/[0.06] pt-5 mb-6">
+            <p class="text-xs uppercase font-mono tracking-wider text-zinc-300 font-semibold mb-3">Capacidades Clave:</p>
+            <ul class="text-xs text-zinc-400 space-y-2.5 font-sans">
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Chatbots integrados a WhatsApp API oficial</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> RAG con embeddings en bases vectoriales</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Clasificación semántica de mensajes entrantes</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Enrutamiento dinámico por reglas de negocio</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Protocolo estricto anti-alucinaciones</li>
+            </ul>
+          </div>
         </div>
-        <p class="text-sm"><strong class="text-white">Entregables:</strong> Asistentes 24/7 entrenados con documentos corporativos y conectores de mensajería.</p>
+        <p class="text-xs text-zinc-400 border-t border-white/[0.06] pt-4 font-mono">
+          <strong class="text-white">Entregables:</strong> Asistentes 24/7 entrenados con documentos y conectores oficiales.
+        </p>
       </div>
 
-      <div class="glass-panel p-8">
-        <h3 class="mb-3">📈 LÍNEA 3: ANALÍTICA & ML</h3>
-        <p class="text-slate-400 mb-6">Control determinista de tesorería y modelos predictivos sobre series temporales.</p>
-        <div class="mb-6">
-          <strong class="text-white">Capacidades clave:</strong>
-          <ul class="text-sm text-slate-400 mt-3 space-y-2">
-            <li>• Simulador matemático de flujo de caja</li>
-            <li>• Tuberías de ingesta, saneamiento y ETL</li>
-            <li>• Modelado predictivo con PyTorch y Scipy</li>
-            <li>• Segmentación de demanda y clientes</li>
-            <li>• Módulo interno sin fricción legal/fiscal</li>
-          </ul>
+      <div class="glass-panel p-8 sm:p-10 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="font-mono text-2xl font-bold text-quantum/60">03</span>
+            <span class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold">Modelado Determinista</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4">Tesorería & Analítica</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+            Control determinista de tesorería y modelos predictivos sobre series temporales basados en formulaciones matemáticas rigurosas.
+          </p>
+          <div class="border-t border-white/[0.06] pt-5 mb-6">
+            <p class="text-xs uppercase font-mono tracking-wider text-zinc-300 font-semibold mb-3">Capacidades Clave:</p>
+            <ul class="text-xs text-zinc-400 space-y-2.5 font-sans">
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Simulador matemático de flujo de caja 90 días</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Tuberías de ingesta, saneamiento y ETL</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Modelado predictivo con PyTorch y Scipy</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Segmentación determinista de demanda</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Trazabilidad sin sesgos contables</li>
+            </ul>
+          </div>
         </div>
-        <p class="text-sm"><strong class="text-white">Entregables:</strong> Simulador de liquidez operativa, reportes analíticos y pipelines trazables de datos.</p>
+        <p class="text-xs text-zinc-400 border-t border-white/[0.06] pt-4 font-mono">
+          <strong class="text-white">Entregables:</strong> Simulador de liquidez operativa, reportes analíticos y pipelines trazables.
+        </p>
       </div>
     </div>
 
-    <!-- Methodology -->
-    <h2 class="mb-10 text-center">Metodología de Ingeniería en 4 Fases</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 text-left">
-      <div class="p-6 bg-white/5 border border-dashed border-white/20 rounded-xl">
-        <div class="text-accent font-bold text-xs tracking-wider mb-3">FASE 1</div>
-        <h4 class="mb-3">🔍 Inmersión & Diagnóstico</h4>
-        <ul class="text-sm text-slate-400 space-y-1">
-          <li>• Auditoría de procesos y datos</li>
-          <li>• Viabilidad matemática</li>
-          <li>• Documento SRS formal</li>
-          <li>• Selección de stack</li>
-        </ul>
+    <!-- Methodology 4 Phases (Apple Timeline Grid) -->
+    <div class="mb-24">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="eyebrow">Ciclo de Ingeniería</p>
+        <h2 class="section-title mt-3">Metodología en 4 Fases</h2>
       </div>
-      <div class="p-6 bg-white/5 border border-dashed border-white/20 rounded-xl">
-        <div class="text-accent font-bold text-xs tracking-wider mb-3">FASE 2</div>
-        <h4 class="mb-3">📐 Arquitectura & Prototipo</h4>
-        <ul class="text-sm text-slate-400 space-y-1">
-          <li>• Diseño UI/UX operativo</li>
-          <li>• Prueba de Concepto (PoC)</li>
-          <li>• Calibración de latencia</li>
-          <li>• Validación preliminar</li>
-        </ul>
-      </div>
-      <div class="p-6 bg-white/5 border border-dashed border-white/20 rounded-xl">
-        <div class="text-accent font-bold text-xs tracking-wider mb-3">FASE 3</div>
-        <h4 class="mb-3">⚙️ Sprints & Construcción</h4>
-        <ul class="text-sm text-slate-400 space-y-1">
-          <li>• Ciclos ágiles de 2 semanas</li>
-          <li>• Incrementos funcionales</li>
-          <li>• Pruebas de integración</li>
-          <li>• Refinamiento continuo</li>
-        </ul>
-      </div>
-      <div class="p-6 bg-white/5 border border-dashed border-white/20 rounded-xl">
-        <div class="text-accent font-bold text-xs tracking-wider mb-3">FASE 4</div>
-        <h4 class="mb-3">🚀 Despliegue & SLA</h4>
-        <ul class="text-sm text-slate-400 space-y-1">
-          <li>• Entorno Docker con SSL</li>
-          <li>• Transferencia y capacitación</li>
-          <li>• Soporte correctivo</li>
-          <li>• Reentrenamiento de IA</li>
-        </ul>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-panel p-7">
+          <div class="font-mono text-quantum text-xs uppercase tracking-widest font-bold mb-3">Fase 01</div>
+          <h4 class="text-lg font-bold text-white mb-3">Inmersión & Diagnóstico</h4>
+          <ul class="text-xs text-zinc-400 space-y-2 font-mono">
+            <li>• Auditoría de procesos y datos</li>
+            <li>• Viabilidad matemática</li>
+            <li>• Documento SRS formal</li>
+            <li>• Selección de stack</li>
+          </ul>
+        </div>
+
+        <div class="glass-panel p-7">
+          <div class="font-mono text-quantum text-xs uppercase tracking-widest font-bold mb-3">Fase 02</div>
+          <h4 class="text-lg font-bold text-white mb-3">Arquitectura & Prototipo</h4>
+          <ul class="text-xs text-zinc-400 space-y-2 font-mono">
+            <li>• Diseño UI/UX operativo</li>
+            <li>• Prueba de Concepto (PoC)</li>
+            <li>• Calibración de latencia</li>
+            <li>• Validación preliminar</li>
+          </ul>
+        </div>
+
+        <div class="glass-panel p-7">
+          <div class="font-mono text-quantum text-xs uppercase tracking-widest font-bold mb-3">Fase 03</div>
+          <h4 class="text-lg font-bold text-white mb-3">Sprints & Construcción</h4>
+          <ul class="text-xs text-zinc-400 space-y-2 font-mono">
+            <li>• Ciclos ágiles de 2 semanas</li>
+            <li>• Incrementos funcionales</li>
+            <li>• Pruebas de integración</li>
+            <li>• Refinamiento continuo</li>
+          </ul>
+        </div>
+
+        <div class="glass-panel p-7">
+          <div class="font-mono text-quantum text-xs uppercase tracking-widest font-bold mb-3">Fase 04</div>
+          <h4 class="text-lg font-bold text-white mb-3">Despliegue & SLA</h4>
+          <ul class="text-xs text-zinc-400 space-y-2 font-mono">
+            <li>• Entorno Docker con SSL</li>
+            <li>• Transferencia y capacitación</li>
+            <li>• Soporte correctivo</li>
+            <li>• Reentrenamiento de IA</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <!-- Pricing Models -->
-    <h2 class="mb-10 text-center">Modelos de Contratación y Cobro</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-left">
-      <div class="glass-panel p-8 border-t-[3px] border-t-primary">
-        <h3 class="mb-3">📦 PROYECTO FIJO</h3>
-        <p class="text-slate-400 text-sm mb-5">Llave en Mano (Fixed-Price) para alcances 100% delimitados.</p>
-        <ul class="text-sm text-slate-400 mb-6 space-y-2">
-          <li>• 50% Anticipo al inicio</li>
-          <li>• 25% Contra entrega del PoC</li>
-          <li>• 25% Al despliegue final</li>
-        </ul>
-        <div class="inline-block bg-white/5 px-3 py-1 rounded text-xs">Ideal para páginas y módulos web.</div>
-      </div>
-      
-      <div class="glass-panel p-8 border-t-[3px] border-t-accent shadow-[0_0_30px_rgba(139,92,246,0.15)] scale-105 z-10">
-        <h3 class="mb-3 text-gradient">⭐ EVOLUCIÓN CONTINUA</h3>
-        <p class="text-slate-400 text-sm mb-5">SLA + Retainer Mensual para infraestructura viva y IA.</p>
-        <ul class="text-sm text-slate-400 mb-6 space-y-2">
-          <li>• Inversión inicial por ingeniería</li>
-          <li>• Tarifa mensual recurrente</li>
-          <li>• Consumo AWS a precio de costo</li>
-        </ul>
-        <div class="inline-block bg-white/5 px-3 py-1 rounded text-xs">Ideal para plataformas RAG y agentes.</div>
+    <div class="mb-24">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="eyebrow">Esquemas de Vinculación</p>
+        <h2 class="section-title mt-3">Modelos de Contratación</h2>
       </div>
 
-      <div class="glass-panel p-8 border-t-[3px] border-t-success">
-        <h3 class="mb-3">🧪 BOLSA DE HORAS</h3>
-        <p class="text-slate-400 text-sm mb-5">Tiempo y Materiales para prototipos experimentales.</p>
-        <ul class="text-sm text-slate-400 mb-6 space-y-2">
-          <li>• Paquete de horas mes/semana</li>
-          <li>• Liquidación periódica de cómputo</li>
-          <li>• Modificación de roadmap flexible</li>
-        </ul>
-        <div class="inline-block bg-white/5 px-3 py-1 rounded text-xs">Ideal para simulaciones y PoC de IA.</div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-panel p-8 flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-2">Modalidad 01</div>
+            <h3 class="text-2xl font-bold text-white mb-3">Proyecto Fijo</h3>
+            <p class="text-zinc-400 text-sm mb-6">Llave en Mano (Fixed-Price) para requerimientos con alcance 100% delimitado.</p>
+            <ul class="text-xs text-zinc-400 mb-8 space-y-2.5 font-mono">
+              <li>• 50% Anticipo al inicio</li>
+              <li>• 25% Contra entrega del PoC funcional</li>
+              <li>• 25% Al despliegue final en producción</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-2 text-center text-xs font-mono text-quantum">
+            Ideal para plataformas y módulos específicos
+          </div>
+        </div>
+        
+        <div class="glass-panel p-8 flex flex-col justify-between ring-1 ring-quantum/40 shadow-[0_0_40px_-10px_rgba(0,229,255,0.25)]">
+          <div>
+            <div class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold mb-2">Modalidad 02 · Recomendada</div>
+            <h3 class="text-2xl font-bold text-white mb-3">Evolución Continua</h3>
+            <p class="text-zinc-400 text-sm mb-6">SLA + Retainer mensual para infraestructura viva, optimización de IA y soporte prioritario.</p>
+            <ul class="text-xs text-zinc-400 mb-8 space-y-2.5 font-mono">
+              <li>• Inversión inicial por ingeniería</li>
+              <li>• Tarifa mensual recurrente predecible</li>
+              <li>• Consumo AWS a precio directo de costo</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-quantum/30 bg-quantum/[0.08] px-3.5 py-2 text-center text-xs font-mono text-white">
+            Ideal para plataformas RAG, WhatsApp API y analítica
+          </div>
+        </div>
+
+        <div class="glass-panel p-8 flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-xs uppercase tracking-widest text-zinc-400 mb-2">Modalidad 03</div>
+            <h3 class="text-2xl font-bold text-white mb-3">Bolsa de Horas</h3>
+            <p class="text-zinc-400 text-sm mb-6">Tiempo y materiales para prototipos experimentales, auditorías y sandbox de investigación.</p>
+            <ul class="text-xs text-zinc-400 mb-8 space-y-2.5 font-mono">
+              <li>• Paquetes mensuales de horas de ingeniería</li>
+              <li>• Liquidación periódica de cómputo</li>
+              <li>• Adaptación flexible de roadmap</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-2 text-center text-xs font-mono text-quantum">
+            Ideal para simulaciones y PoCs de validación
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="glass-panel p-10 text-center">
-      <h3 class="mb-4">¿Tienes un requerimiento técnico específico o necesitas cotizar una PoC?</h3>
-      <p class="text-slate-400 mb-8 text-lg">Analizamos la viabilidad matemática y computacional de tu proyecto.</p>
-      <a routerLink="/contacto" class="btn btn-primary">Solicitar Cotización Técnica</a>
+    <!-- Bottom CTA Card -->
+    <div class="glass-panel p-10 md:p-14 text-center max-w-4xl mx-auto">
+      <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">¿Tienes un requerimiento técnico específico o necesitas una PoC?</h3>
+      <p class="text-zinc-400 mb-8 text-base max-w-xl mx-auto">Analizamos la viabilidad matemática y computacional de tu proyecto en una sesión técnica directa.</p>
+      <a routerLink="/contacto" class="button-primary">Solicitar Cotización Técnica</a>
     </div>
   </div>
 </div>
+

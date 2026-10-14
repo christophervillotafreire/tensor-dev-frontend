@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,71 +7,218 @@
 @layer base {
   :root,
   .dark {
-    /* Dark Mode permanente */
-    --bg-void: 5 5 9;
-    --bg-deep: 10 10 15;
-    --text-primary: 255 255 255;
-    --text-muted: 161 161 170;
+    /* Palette: Obsidian Void + Quantum Luminescence */
+    --bg-void: 4 4 8;
+    --bg-deep: 9 9 15;
+    --text-primary: 248 250 252;
+    --text-muted: 156 163 175;
     --accent-quantum: 0 229 255;
     --border-subtle: 255 255 255;
+    
+    /* Apple Spring Timing */
+    --apple-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   body {
-    @apply bg-void text-text-primary font-sans antialiased min-h-screen flex flex-col transition-colors duration-300;
+    @apply bg-void text-text-primary font-sans antialiased min-h-screen flex flex-col selection:bg-quantum/30 selection:text-white;
+    background-color: #040408;
+    color: #f8fafc;
   }
   
-  ::selection {
-    background-color: rgb(var(--accent-quantum) / 0.3);
-    color: rgb(var(--text-primary));
-  }
-  
+  /* Apple Typography Foundations (Optical Sizing & Tracking) */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display text-text-primary leading-tight tracking-[-0.01em];
+    @apply font-display text-text-primary;
+    font-optical-sizing: auto;
+  }
+
+  h1 {
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  h2 {
+    letter-spacing: -0.028em;
+    line-height: 1.1;
+  }
+
+  h3 {
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  /* Response: Kill Latency on Pointer-Down (Section 1 of Apple Design) */
+  button,
+  .btn,
+  .button-ghost,
+  .button-primary,
+  .interactive-tap {
+    transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 200ms ease-out,
+                background-color 200ms ease-out,
+                border-color 200ms ease-out;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:active,
+  .btn:active,
+  .button-ghost:active,
+  .button-primary:active,
+  .interactive-tap:active {
+    transform: scale(0.972) !important;
+    transition: transform 80ms cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
 }
 
 @layer components {
+  /* Layout Containers */
   .investor-container {
-    @apply max-w-[1600px] mx-auto px-6 sm:px-10 md:px-12 lg:px-16;
+    @apply max-w-[1520px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16;
   }
-  
+
+  /* Section Framing */
+  .section {
+    @apply py-20 sm:py-24 md:py-32;
+  }
+
+  /* Typography Utilities */
   .eyebrow {
-    @apply text-xs uppercase tracking-[0.18em] text-text-muted;
+    @apply font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-quantum font-semibold;
   }
   
   .section-title {
-    @apply font-display text-balance;
+    @apply font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-[-0.03em] leading-[1.08] text-balance;
   }
-  
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-cyan-200 to-quantum bg-clip-text text-transparent;
+  }
+
+  .text-gradient-subtle {
+    @apply bg-gradient-to-br from-white via-slate-100 to-slate-400 bg-clip-text text-transparent;
+  }
+
+  /* Buttons & Interactive Elements (Apple Physics & Specular Highlights) */
+  .button-primary,
+  .btn-primary {
+    @apply relative inline-flex h-12 items-center justify-center gap-2 rounded-full px-7 text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-void bg-white shadow-lg transition-all duration-300;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9),
+                0 4px 16px -2px rgba(255, 255, 255, 0.3),
+                0 12px 24px -6px rgba(0, 0, 0, 0.5);
+  }
+  .button-primary:hover,
+  .btn-primary:hover {
+    @apply bg-white/95 text-void;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 1),
+                0 8px 24px -2px rgba(0, 229, 255, 0.4),
+                0 16px 32px -4px rgba(0, 0, 0, 0.6);
+  }
+
+  .button-ghost,
+  .btn-ghost {
+    @apply relative inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/[0.14] bg-white/[0.04] px-7 text-xs sm:text-sm font-medium uppercase tracking-[0.12em] text-white backdrop-blur-md transition-all duration-300 hover:border-quantum/60 hover:bg-quantum/[0.08] hover:text-quantum hover:shadow-[0_0_24px_-4px_rgba(0,229,255,0.35)];
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  }
+
   .button-link {
-    @apply inline-flex items-center gap-2 text-quantum transition-colors hover:text-white;
+    @apply inline-flex items-center gap-2 text-sm font-medium tracking-[0.12em] uppercase text-quantum transition-colors duration-200 hover:text-white;
   }
-  
-  .button-ghost {
-    @apply inline-flex h-12 items-center justify-center rounded border border-subtle/10 bg-transparent px-8 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:border-quantum/50 hover:bg-quantum/5 hover:text-quantum;
+
+  /* Apple Glass Surfaces (Section 12 Materials & Depth) */
+  .apple-glass {
+    background: rgba(10, 10, 16, 0.72);
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+                0 20px 48px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-panel {
+    background: rgba(12, 12, 20, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+                0 16px 36px -10px rgba(0, 0, 0, 0.5);
+    transition: border-color 300ms ease, box-shadow 300ms ease, transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-panel:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.18),
+                0 24px 48px -12px rgba(0, 0, 0, 0.65);
+  }
+
+  /* Form Inputs with Apple Focus States */
+  .input-field {
+    @apply w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3.5 text-sm text-white placeholder-text-muted/60 transition-all duration-200 focus:border-quantum focus:bg-white/[0.06] focus:outline-none focus:ring-2 focus:ring-quantum/20;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
   }
 
   .form-line {
-    @apply w-full border-b border-subtle/10 bg-transparent px-0 py-4 text-white placeholder-text-muted transition-colors focus:border-quantum focus:outline-none focus:ring-0;
+    @apply w-full border-b border-white/10 bg-transparent px-0 py-4 text-white placeholder-text-muted/50 transition-colors duration-200 focus:border-quantum focus:outline-none;
   }
-  
+
+  /* Tech and Metric Badges */
   .tech-label {
     @apply font-mono uppercase tracking-[0.16em];
   }
-  
+
   .metric-pill {
-    @apply inline-flex items-center gap-4 rounded-full border border-subtle/10 bg-deep/50 px-6 py-2 text-xs uppercase tracking-[0.18em] text-quantum backdrop-blur-sm;
-  }
-  
-  .metric-divider {
-    @apply h-1 w-1 rounded-full bg-subtle/20;
+    @apply inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 sm:px-5 py-2 text-[11px] sm:text-xs uppercase tracking-[0.16em] text-quantum backdrop-blur-md;
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
   }
 }
 
 @layer utilities {
   .subtle-grid {
-    background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgb(var(--text-primary) / 0.05) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgb(var(--text-primary) / 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  }
+
+  .subtle-radial {
+    background: radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.12) 0%, transparent 60%);
+  }
+
+  /* Apple-style window chrome reflection */
+  .specular-border {
+    position: relative;
+  }
+  .specular-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.03) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+/* Accessibility: Section 14 Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -1,29 +1,64 @@
-<footer class="border-t border-subtle/10 bg-void">
-  <div class="investor-container grid min-h-[30vh] gap-10 py-16 md:grid-cols-3 md:py-20">
-    <div class="space-y-4">
-      <div class="flex items-center gap-3 text-text-primary">
-        <img src="logo.jpg" alt="Tensor.Dev Logo" class="h-12 w-auto rounded-md" />
-        <span class="font-display text-lg tracking-[-0.02em] text-text-primary">Tensor.Dev S.A.S.</span>
+<footer class="border-t border-white/[0.08] bg-[#030306] text-zinc-400">
+  <div class="investor-container grid gap-12 py-16 sm:py-20 md:grid-cols-12 lg:gap-16">
+    <!-- Brand & Regional Identity -->
+    <div class="md:col-span-5 space-y-4">
+      <div class="flex items-center gap-3 text-white">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-1">
+          <img src="logo.jpg" alt="Tensor.Dev Logo" class="h-10 w-auto rounded-lg object-contain" />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display text-lg font-bold tracking-[-0.03em] text-white">Tensor.Dev S.A.S.</span>
+          <span class="font-mono text-[9px] uppercase tracking-[0.22em] text-quantum">Ingeniería & Analítica</span>
+        </div>
       </div>
-      <p class="text-sm text-text-muted">Firma de Ingeniería de Software y Analítica Aplicada.<br>Suroccidente Colombiano</p>
+      <p class="text-sm leading-relaxed text-zinc-400 max-w-sm">
+        Firma de ingeniería de software transaccional, pipelines cognitivos RAG y analítica determinista basada en física computacional.
+      </p>
+      <div class="flex items-center gap-2 text-xs font-mono text-zinc-500">
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+        <span>Operaciones en San Juan de Pasto, Nariño · Cobertura Internacional</span>
+      </div>
     </div>
     
-    <div class="space-y-3 text-sm text-text-muted">
-      <p class="tech-label text-[10px] text-quantum mb-2">Contacto</p>
-      <p class="block text-xs">📍 San Juan de Pasto, Nariño 520001</p>
-      <a href="mailto:contacto@tensor.dev" class="block text-xs transition-colors hover:text-text-primary">✉️ contacto&#64;tensor.dev</a>
-      <a href="#" class="block text-xs transition-colors hover:text-text-primary">💬 +57 (300) 000-0000 (WhatsApp API)</a>
+    <!-- Quick Nav Links -->
+    <div class="md:col-span-3 space-y-3 text-sm">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-white font-semibold">Navegación</p>
+      <ul class="space-y-2 text-xs font-mono uppercase tracking-wider">
+        <li><a routerLink="/" class="text-zinc-400 transition-colors hover:text-white">Inicio</a></li>
+        <li><a routerLink="/servicios" class="text-zinc-400 transition-colors hover:text-white">Servicios & Metodología</a></li>
+        <li><a routerLink="/nosotros" class="text-zinc-400 transition-colors hover:text-white">Nosotros & Filosofía</a></li>
+        <li><a routerLink="/labs" class="text-zinc-400 transition-colors hover:text-white">Labs & Simulador</a></li>
+        <li><a routerLink="/contacto" class="text-zinc-400 transition-colors hover:text-white">Auditoría & Contacto</a></li>
+      </ul>
     </div>
     
-    <div class="space-y-3 text-sm text-text-muted">
-      <p class="tech-label text-[10px] text-quantum mb-2">Legal</p>
-      <p class="block text-xs">Protocolos NDA estrictos.</p>
-      <p class="block text-xs">Datos protegidos bajo acuerdo de confidencialidad.</p>
+    <!-- Direct Communications & Legal Protocol -->
+    <div class="md:col-span-4 space-y-4 text-sm">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-white font-semibold">Canales Directos</p>
+      <div class="space-y-2 text-xs">
+        <a href="mailto:contacto@tensor.dev" class="flex items-center gap-2 text-zinc-400 transition-colors hover:text-quantum">
+          <span>✉️</span>
+          <span>contacto&#64;tensor.dev</span>
+        </a>
+        <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-zinc-400 transition-colors hover:text-quantum">
+          <span>💬</span>
+          <span>+57 (300) 000-0000 (WhatsApp API)</span>
+        </a>
+      </div>
+
+      <div class="pt-2">
+        <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-500 mb-1.5">Garantía Corporativa</p>
+        <p class="text-[11px] leading-relaxed text-zinc-400">
+          Protocolos NDA estrictos. Todos los datos, arquitecturas y modelos de clientes se resguardan bajo acuerdos de confidencialidad y aislamiento cloud.
+        </p>
+      </div>
     </div>
   </div>
   
-  <div class="investor-container flex flex-col gap-3 border-t border-subtle/10 py-6 text-xs text-text-muted md:flex-row md:items-center md:justify-between">
+  <!-- Sub-Footer / Copyright -->
+  <div class="investor-container flex flex-col gap-3 border-t border-white/[0.06] py-6 text-[11px] font-mono tracking-wider text-zinc-500 md:flex-row md:items-center md:justify-between">
     <p>&copy; 2026 Tensor.Dev S.A.S. Todos los derechos reservados.</p>
-    <p>Ingeniería de Software · Analítica de Datos</p>
+    <p class="text-zinc-400">Ingeniería de Software · Física Computacional · Analítica de Datos</p>
   </div>
 </footer>
+

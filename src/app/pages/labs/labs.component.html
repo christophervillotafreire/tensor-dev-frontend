@@ -1,137 +1,166 @@
-<div class="pt-20 animate-fade-in">
-  <div class="max-w-7xl mx-auto px-8 section">
-    
-    <div class="text-center mb-16">
-      <h1 class="mb-4">Tensor Labs: <span class="text-gradient">Entorno Experimental</span></h1>
-      <p class="text-slate-400 max-w-3xl mx-auto text-lg">
+<div class="pt-28 sm:pt-36 pb-24 relative overflow-hidden">
+  <!-- Ambient background glow -->
+  <div class="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-quantum/[0.08] blur-[150px]"></div>
+
+  <div class="investor-container relative z-10">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <p class="eyebrow">Entorno Experimental & Telemetría</p>
+      <h1 class="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.035em] text-white">
+        Tensor Labs: <span class="bg-gradient-to-r from-white via-cyan-100 to-quantum bg-clip-text text-transparent">Sandbox Interactivo</span>
+      </h1>
+      <p class="mt-6 text-base sm:text-lg text-zinc-400 leading-relaxed">
         Interactúa en tiempo real con nuestras canalizaciones de cálculo determinista y modelos semánticos en producción.
       </p>
     </div>
 
-    <!-- Demo 1 -->
-    <div class="mb-16">
+    <!-- Demo 1: Motor Determinista -->
+    <div class="mb-24">
       <div class="mb-8">
-        <div class="inline-block bg-accent/15 text-accent-light font-bold rounded px-3 py-1 text-xs mb-3">DEMO INTERACTIVA 1</div>
-        <h2 class="text-3xl mb-2">Motor Determinista de Proyección de Flujo de Caja</h2>
-        <p class="text-slate-400 text-lg">Simulación de saldo operativo a 90 días sin sesgo contable. Diseñado para control de liquidez interna.</p>
+        <div class="inline-flex items-center gap-2 rounded-full border border-quantum/30 bg-quantum/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-quantum mb-3">
+          <span class="h-1.5 w-1.5 rounded-full bg-quantum animate-pulse"></span>
+          Demo Interactiva 01
+        </div>
+        <h2 class="section-title text-2xl sm:text-3xl md:text-4xl text-left">Motor Determinista de Proyección de Flujo de Caja</h2>
+        <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-3xl">Simulación de saldo operativo a 90 días sin sesgo contable. Diseñado para control de liquidez interna y dinámica financiera.</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Input Form -->
-        <div class="glass-panel p-8">
-          <h4 class="mb-6 text-accent-light">PARÁMETROS OPERATIVOS</h4>
-          
-          <div class="mb-5">
-            <label class="block text-sm text-slate-400 mb-2">Saldo Inicial en Bancos (COP)</label>
-            <input type="text" class="input-field font-mono" value="$ 45.000.000" disabled>
-          </div>
-          <div class="mb-5">
-            <label class="block text-sm text-slate-400 mb-2">Cobranza Proyectada Mensual</label>
-            <input type="text" class="input-field font-mono" value="$ 28.500.000" disabled>
-          </div>
-          <div class="mb-5">
-            <label class="block text-sm text-slate-400 mb-2">Nómina y Costos Fijos</label>
-            <input type="text" class="input-field font-mono" value="$ 16.200.000" disabled>
-          </div>
-          <div class="mb-5">
-            <label class="block text-sm text-slate-400 mb-2">Tasa de Morosidad Estimada</label>
-            <input type="text" class="input-field font-mono" value="12% (Desviación Típica)" disabled>
+        <div class="glass-panel p-8 sm:p-10">
+          <div class="flex items-center justify-between border-b border-white/[0.06] pb-4 mb-6">
+            <h4 class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold">Parámetros Operativos</h4>
+            <span class="font-mono text-[11px] text-zinc-400">STATUS: READY</span>
           </div>
           
-          <button class="btn btn-primary w-full mt-4">⚡ Ejecutar Simulación (Demo Estática)</button>
-        </div>
-
-        <!-- Output Terminal -->
-        <div class="bg-[#090a0f] border border-white/10 rounded-xl p-8 flex flex-col font-mono">
-          <h4 class="mb-6 text-success">PROYECCIÓN RESULTANTE (CURVA DE LIQUIDEZ)</h4>
-          <div class="mb-6 text-sm leading-loose">
-            <p>> Calculando trayectoria de fase...</p>
-            <p>> Saldo Día 30: $ 54.150.000 COP (Base)</p>
-            <p>> Saldo Día 60: <span class="text-accent-light">$ 61.800.000 COP (Reposición)</span></p>
-            <p>> Saldo Día 90: <span class="text-success">$ 71.200.000 COP (Superávit)</span></p>
-          </div>
-          
-          <div class="mt-auto">
-            <div class="text-xs text-slate-500 mb-4">Gráfico de Dispersión / Continuidad</div>
-            <div class="flex items-end gap-4 h-[120px] border-b border-l border-white/10 px-4">
-              <div class="flex-1 bg-primary rounded-t-sm transition-all duration-1000 h-[40%]" title="Día 0"></div>
-              <div class="flex-1 bg-primary rounded-t-sm transition-all duration-1000 h-[55%]" title="Día 30"></div>
-              <div class="flex-1 bg-primary rounded-t-sm transition-all duration-1000 h-[65%]" title="Día 60"></div>
-              <div class="flex-1 bg-success rounded-t-sm transition-all duration-1000 h-[80%]" title="Día 90"></div>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1.5">Saldo Inicial en Bancos (COP)</label>
+              <input type="text" class="input-field font-mono" value="$ 45.000.000" disabled>
+            </div>
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1.5">Cobranza Proyectada Mensual</label>
+              <input type="text" class="input-field font-mono" value="$ 28.500.000" disabled>
+            </div>
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1.5">Nómina y Costos Fijos</label>
+              <input type="text" class="input-field font-mono" value="$ 16.200.000" disabled>
+            </div>
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1.5">Tasa de Morosidad Estimada</label>
+              <input type="text" class="input-field font-mono" value="12% (Desviación Típica)" disabled>
             </div>
           </div>
-          <p class="text-xs text-slate-500 mt-6">✓ Sin riesgo de iliquidez a 90 días | Tolerancia a impago: 28.4%</p>
+          
+          <button class="button-primary w-full mt-6 text-xs sm:text-sm">
+            <span>⚡ Ejecutar Simulación Determinista</span>
+          </button>
+        </div>
+
+        <!-- Output Terminal (macOS Terminal) -->
+        <div class="glass-panel p-8 sm:p-10 flex flex-col font-mono justify-between overflow-hidden relative">
+          <!-- macOS Window Dots -->
+          <div class="flex items-center gap-2 border-b border-white/[0.06] pb-4 mb-5">
+            <div class="h-2.5 w-2.5 rounded-full bg-rose-500/80"></div>
+            <div class="h-2.5 w-2.5 rounded-full bg-amber-500/80"></div>
+            <div class="h-2.5 w-2.5 rounded-full bg-emerald-500/80"></div>
+            <span class="text-[11px] text-zinc-400 ml-2">quant://flow-engine.v2</span>
+          </div>
+
+          <div>
+            <h4 class="mb-4 text-emerald-400 text-xs sm:text-sm font-semibold tracking-wide">PROYECCIÓN RESULTANTE (CURVA DE LIQUIDEZ)</h4>
+            <div class="mb-6 text-xs leading-loose text-zinc-300 space-y-1">
+              <p class="text-zinc-400">&gt; Calculando trayectoria de fase continua...</p>
+              <p>&gt; Saldo Día 30: <span class="text-white font-bold">$ 54.150.000 COP (Base)</span></p>
+              <p>&gt; Saldo Día 60: <span class="text-cyan-300 font-bold">$ 61.800.000 COP (Reposición)</span></p>
+              <p>&gt; Saldo Día 90: <span class="text-emerald-400 font-bold">$ 71.200.000 COP (Superávit)</span></p>
+            </div>
+          </div>
+          
+          <div class="mt-4">
+            <div class="text-[11px] uppercase tracking-wider text-zinc-400 mb-3">Gráfico de Dispersión / Continuidad</div>
+            <div class="flex items-end gap-3 sm:gap-4 h-[120px] border-b border-l border-white/10 px-4 pb-2">
+              <div class="flex-1 bg-quantum/40 rounded-t-sm h-[40%] transition-all duration-700" title="Día 0"></div>
+              <div class="flex-1 bg-quantum/60 rounded-t-sm h-[55%] transition-all duration-700" title="Día 30"></div>
+              <div class="flex-1 bg-quantum/80 rounded-t-sm h-[65%] transition-all duration-700" title="Día 60"></div>
+              <div class="flex-1 bg-emerald-400 rounded-t-sm h-[80%] transition-all duration-700 shadow-[0_0_15px_rgba(52,211,153,0.5)]" title="Día 90"></div>
+            </div>
+            <p class="text-[11px] text-emerald-400/90 mt-4 font-mono">✓ Cero riesgo de iliquidez a 90 días | Tolerancia a impago: 28.4%</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Demo 2 -->
-    <div>
+    <!-- Demo 2: NLP Classifier -->
+    <div class="mb-12">
       <div class="mb-8">
-        <div class="inline-block bg-accent/15 text-accent-light font-bold rounded px-3 py-1 text-xs mb-3">DEMO INTERACTIVA 2</div>
-        <h2 class="text-3xl mb-2">Clasificador Semántico de Correo (NLP)</h2>
-        <p class="text-slate-400 text-lg">Enrutamiento automático de solicitudes entrantes hacia el departamento correcto sin intervención humana.</p>
+        <div class="inline-flex items-center gap-2 rounded-full border border-quantum/30 bg-quantum/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-quantum mb-3">
+          <span class="h-1.5 w-1.5 rounded-full bg-quantum animate-pulse"></span>
+          Demo Interactiva 02
+        </div>
+        <h2 class="section-title text-2xl sm:text-3xl md:text-4xl text-left">Clasificador Semántico de Mensajería (NLP & RAG)</h2>
+        <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-3xl">Enrutamiento automático de solicitudes entrantes hacia el área correcta con extracción de entidades.</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Email Input -->
-        <div class="glass-panel p-8">
-          <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
-            <h4 class="text-accent-light">CORREO SIMULADO</h4>
-            <select class="input-field w-auto py-2 px-3 text-sm font-semibold" disabled>
-              <option>Cotización</option>
-              <option>Soporte Técnico</option>
-              <option>Reclamo</option>
-            </select>
+        <div class="glass-panel p-8 sm:p-10">
+          <div class="flex justify-between items-center mb-6 border-b border-white/[0.06] pb-4">
+            <h4 class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold">Mensaje Entrante Simulado</h4>
+            <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono uppercase text-zinc-300">WhatsApp API</span>
           </div>
           
-          <div class="bg-black/30 p-6 rounded-lg mb-6 text-sm font-sans">
-            <p class="mb-2 text-slate-400"><strong>De:</strong> compras&#64;distribuidoranarino.com</p>
-            <p class="mb-6 text-slate-400"><strong>Asunto:</strong> Urgente: Disponibilidad de 250 unidades y cotización</p>
-            <p class="leading-relaxed text-slate-200">
-              "Buenos días equipo, requerimos confirmar si tienen stock de 250
-              unidades del ítem #A-42 para despacho inmediato en Pasto y cuál
-              es el descuento por pago de contado. Quedamos atentos para
-              emitir la orden de compra hoy mismo."
-            </p>
+          <div class="rounded-xl border border-white/10 bg-[#06060c] p-6 mb-6 text-xs sm:text-sm font-sans space-y-2">
+            <p class="text-zinc-400"><strong class="text-zinc-200">De:</strong> compras&#64;distribuidoranarino.com</p>
+            <p class="text-zinc-400"><strong class="text-zinc-200">Asunto:</strong> Urgente: Disponibilidad de 250 unidades y cotización</p>
+            <div class="mt-4 pt-4 border-t border-white/[0.06] text-zinc-300 leading-relaxed italic">
+              "Buenos días equipo, requerimos confirmar si tienen stock de 250 unidades del ítem #A-42 para despacho inmediato en Pasto y cuál es el descuento por pago de contado. Quedamos atentos para emitir la orden de compra hoy mismo."
+            </div>
           </div>
         </div>
 
-        <!-- Output NLP -->
-        <div class="bg-[#090a0f] border border-white/10 rounded-xl p-8 font-mono">
-          <h4 class="mb-6 text-success">ANÁLISIS SEMÁNTICO EN TIEMPO REAL</h4>
+        <!-- Output NLP Terminal -->
+        <div class="glass-panel p-8 sm:p-10 font-mono">
+          <div class="flex items-center gap-2 border-b border-white/[0.06] pb-4 mb-6">
+            <div class="h-2.5 w-2.5 rounded-full bg-rose-500/80"></div>
+            <div class="h-2.5 w-2.5 rounded-full bg-amber-500/80"></div>
+            <div class="h-2.5 w-2.5 rounded-full bg-emerald-500/80"></div>
+            <span class="text-[11px] text-zinc-400 ml-2">agent://nlp-classifier</span>
+          </div>
+
+          <h4 class="mb-5 text-emerald-400 text-xs sm:text-sm font-semibold tracking-wide">ANÁLISIS SEMÁNTICO EN TIEMPO REAL</h4>
           
-          <div>
-            <div class="mb-5">
-              <span class="text-slate-500 text-xs block mb-1">Intención Primaria:</span>
-              <strong class="text-accent-light text-lg">Consulta Comercial / Venta Mayorista</strong>
+          <div class="space-y-4">
+            <div>
+              <span class="text-zinc-400 text-[11px] block mb-1">Intención Primaria:</span>
+              <strong class="text-white text-base font-sans">Consulta Comercial / Venta Mayorista</strong>
             </div>
             
-            <div class="grid grid-cols-2 gap-4 mb-5">
-              <div>
-                <span class="text-slate-500 text-xs block mb-1">Score de Confianza:</span>
-                <strong class="text-success text-lg">98.6%</strong>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="rounded-xl border border-white/5 bg-white/[0.02] p-3">
+                <span class="text-zinc-400 text-[10px] uppercase block mb-1">Score de Confianza</span>
+                <strong class="text-emerald-400 text-base font-mono">98.6%</strong>
               </div>
-              <div>
-                <span class="text-slate-500 text-xs block mb-1">Urgencia Detectada:</span>
-                <strong class="text-red-500 text-lg">ALTA (Mismo día)</strong>
+              <div class="rounded-xl border border-white/5 bg-white/[0.02] p-3">
+                <span class="text-zinc-400 text-[10px] uppercase block mb-1">Urgencia Detectada</span>
+                <strong class="text-amber-400 text-base font-mono">ALTA (Mismo Día)</strong>
               </div>
             </div>
 
-            <div class="mb-8">
-              <span class="text-slate-500 text-xs block mb-2">Entidades Extraídas:</span>
-              <ul class="text-sm space-y-2 bg-black/30 p-4 rounded-lg">
-                <li><span class="text-accent font-semibold">Cantidad:</span> 250 unidades</li>
-                <li><span class="text-accent font-semibold">Producto:</span> Ítem #A-42</li>
-                <li><span class="text-accent font-semibold">Destino:</span> San Juan de Pasto</li>
+            <div>
+              <span class="text-zinc-400 text-[11px] block mb-2">Entidades Extraídas por el Modelo:</span>
+              <ul class="text-xs space-y-1.5 rounded-xl border border-white/5 bg-[#06060c] p-4 text-zinc-300">
+                <li><span class="text-quantum font-semibold">Cantidad:</span> 250 unidades</li>
+                <li><span class="text-quantum font-semibold">Producto:</span> Ítem #A-42</li>
+                <li><span class="text-quantum font-semibold">Destino:</span> San Juan de Pasto</li>
               </ul>
             </div>
 
-            <div class="border-t border-white/10 pt-6">
-              <span class="text-slate-500 text-xs block mb-3">ACCIÓN AUTOMATIZADA:</span>
-              <p class="text-sm mb-2 text-slate-300">➜ Tarjeta creada en CRM: 'Cotización en Proceso'</p>
-              <p class="text-sm mb-2 text-slate-300">➜ Enrutado a: Asesor Comercial de Cierres</p>
-              <p class="text-sm text-slate-300">➜ Notificación WhatsApp enviada al responsable</p>
+            <div class="border-t border-white/[0.06] pt-4 text-xs text-zinc-300 space-y-1">
+              <p class="text-zinc-400 text-[10px] uppercase tracking-wider mb-2">Acción Automatizada Ejecutada:</p>
+              <p>➜ Tarjeta sincronizada en CRM: 'Cotización en Proceso'</p>
+              <p>➜ Enrutado a: Asesor Comercial de Cierres</p>
+              <p class="text-emerald-400">➜ Notificación WhatsApp enviada al responsable</p>
             </div>
           </div>
         </div>
@@ -140,3 +169,4 @@
 
   </div>
 </div>
+

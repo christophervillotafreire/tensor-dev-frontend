@@ -1,20 +1,155 @@
-<header class="fixed inset-x-0 top-0 z-[120] h-16 border-b transition-all duration-300 bg-void/80 backdrop-blur-md border-subtle/10">
+<header 
+  class="fixed inset-x-0 top-0 z-[120] transition-all duration-300"
+  [ngClass]="{
+    'h-20 bg-[#040408]/60 backdrop-blur-xl border-b border-transparent': !isScrolled,
+    'h-16 bg-[#06060c]/85 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.5)]': isScrolled
+  }"
+>
   <div class="investor-container flex h-full items-center justify-between">
-    <a routerLink="/" class="flex items-center gap-3 text-text-primary no-underline">
-      <img src="logo.jpg" alt="Tensor.Dev Logo" class="h-12 w-auto rounded-md" />
-      <span class="font-display text-lg tracking-[-0.02em] text-text-primary">Tensor.Dev</span>
+    <!-- Brand Identity -->
+    <a routerLink="/" (click)="closeMobileMenu()" class="group flex items-center gap-3 text-text-primary no-underline interactive-tap">
+      <div class="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-1 transition-all duration-300 group-hover:border-quantum/50 group-hover:shadow-[0_0_20px_-3px_rgba(0,229,255,0.4)]">
+        <img src="logo.jpg" alt="Tensor.Dev Logo" class="h-9 w-auto rounded-lg object-contain" />
+      </div>
+      <div class="flex flex-col">
+        <span class="font-display text-lg font-bold tracking-[-0.03em] text-white group-hover:text-white transition-colors">Tensor.Dev</span>
+        <span class="font-mono text-[9px] uppercase tracking-[0.22em] text-quantum/90 -mt-1">Applied Analytics</span>
+      </div>
     </a>
     
-    <nav class="hidden items-center gap-8 md:flex">
-      <a routerLink="/" routerLinkActive="text-text-primary" [routerLinkActiveOptions]="{exact: true}" class="inline-flex items-center font-sans text-[12px] font-normal uppercase leading-none tracking-[0.18em] text-text-muted transition-colors hover:text-text-primary">Inicio</a>
-      <a routerLink="/servicios" routerLinkActive="text-text-primary" class="inline-flex items-center font-sans text-[12px] font-normal uppercase leading-none tracking-[0.18em] text-text-muted transition-colors hover:text-text-primary">Servicios</a>
-      <a routerLink="/nosotros" routerLinkActive="text-text-primary" class="inline-flex items-center font-sans text-[12px] font-normal uppercase leading-none tracking-[0.18em] text-text-muted transition-colors hover:text-text-primary">Nosotros</a>
-      <a routerLink="/labs" routerLinkActive="text-text-primary" class="inline-flex items-center font-sans text-[12px] font-normal uppercase leading-none tracking-[0.18em] text-text-muted transition-colors hover:text-text-primary">Labs</a>
-      <a routerLink="/contacto" routerLinkActive="text-text-primary" class="inline-flex items-center font-sans text-[12px] font-normal uppercase leading-none tracking-[0.18em] text-text-muted transition-colors hover:text-text-primary">Contacto</a>
+    <!-- Desktop Navigation: Apple Frosted Pill Bar -->
+    <nav class="hidden md:flex items-center gap-1 rounded-full border border-white/[0.08] bg-white/[0.03] p-1.5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-md">
+      <a 
+        routerLink="/" 
+        routerLinkActive="!bg-white/[0.12] !text-white !shadow-[0_2px_10px_rgba(0,0,0,0.3)] !ring-1 !ring-white/15" 
+        [routerLinkActiveOptions]="{exact: true}" 
+        class="inline-flex items-center px-4 py-1.5 rounded-full font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-400 transition-all duration-200 hover:text-white hover:bg-white/[0.06] active:scale-95"
+      >
+        Inicio
+      </a>
+      <a 
+        routerLink="/servicios" 
+        routerLinkActive="!bg-white/[0.12] !text-white !shadow-[0_2px_10px_rgba(0,0,0,0.3)] !ring-1 !ring-white/15" 
+        class="inline-flex items-center px-4 py-1.5 rounded-full font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-400 transition-all duration-200 hover:text-white hover:bg-white/[0.06] active:scale-95"
+      >
+        Servicios
+      </a>
+      <a 
+        routerLink="/nosotros" 
+        routerLinkActive="!bg-white/[0.12] !text-white !shadow-[0_2px_10px_rgba(0,0,0,0.3)] !ring-1 !ring-white/15" 
+        class="inline-flex items-center px-4 py-1.5 rounded-full font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-400 transition-all duration-200 hover:text-white hover:bg-white/[0.06] active:scale-95"
+      >
+        Nosotros
+      </a>
+      <a 
+        routerLink="/labs" 
+        routerLinkActive="!bg-white/[0.12] !text-white !shadow-[0_2px_10px_rgba(0,0,0,0.3)] !ring-1 !ring-white/15" 
+        class="inline-flex items-center px-4 py-1.5 rounded-full font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-400 transition-all duration-200 hover:text-white hover:bg-white/[0.06] active:scale-95"
+      >
+        Labs
+      </a>
+      <a 
+        routerLink="/contacto" 
+        routerLinkActive="!bg-white/[0.12] !text-white !shadow-[0_2px_10px_rgba(0,0,0,0.3)] !ring-1 !ring-white/15" 
+        class="inline-flex items-center px-4 py-1.5 rounded-full font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-400 transition-all duration-200 hover:text-white hover:bg-white/[0.06] active:scale-95"
+      >
+        Contacto
+      </a>
     </nav>
     
-    <div class="hidden md:flex items-center gap-4">
-      <a routerLink="/contacto" class="button-ghost !h-9 !px-4 !text-[11px]">Auditoría</a>
+    <!-- Action CTA & Mobile Trigger -->
+    <div class="flex items-center gap-3">
+      <a 
+        routerLink="/contacto" 
+        class="hidden sm:inline-flex relative items-center justify-center h-10 px-5 rounded-full text-xs font-semibold uppercase tracking-[0.14em] text-void bg-white transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] active:scale-95"
+      >
+        Auditoría
+      </a>
+
+      <!-- Mobile Menu Button (Apple style fluid toggle) -->
+      <button 
+        type="button"
+        (click)="toggleMobileMenu()"
+        class="md:hidden relative inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 bg-white/[0.05] text-zinc-300 transition-all duration-200 hover:border-quantum/40 hover:text-white active:scale-90"
+        aria-label="Abrir Menú de Navegación"
+      >
+        <span class="sr-only">Menú</span>
+        <svg *ngIf="!isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+        <svg *ngIf="isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Drawer (Apple Frosted Sheet) -->
+  <div 
+    *ngIf="isMobileMenuOpen"
+    class="md:hidden border-b border-white/10 bg-[#06060c]/95 px-6 py-6 shadow-2xl backdrop-blur-2xl transition-all duration-300"
+  >
+    <nav class="flex flex-col space-y-2">
+      <a 
+        routerLink="/" 
+        (click)="closeMobileMenu()"
+        routerLinkActive="bg-white/10 text-white font-semibold"
+        [routerLinkActiveOptions]="{exact: true}"
+        class="flex items-center justify-between rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.16em] text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
+      >
+        <span>Inicio</span>
+        <span class="text-quantum text-[10px]">01</span>
+      </a>
+      <a 
+        routerLink="/servicios" 
+        (click)="closeMobileMenu()"
+        routerLinkActive="bg-white/10 text-white font-semibold"
+        class="flex items-center justify-between rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.16em] text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
+      >
+        <span>Servicios</span>
+        <span class="text-quantum text-[10px]">02</span>
+      </a>
+      <a 
+        routerLink="/nosotros" 
+        (click)="closeMobileMenu()"
+        routerLinkActive="bg-white/10 text-white font-semibold"
+        class="flex items-center justify-between rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.16em] text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
+      >
+        <span>Nosotros</span>
+        <span class="text-quantum text-[10px]">03</span>
+      </a>
+      <a 
+        routerLink="/labs" 
+        (click)="closeMobileMenu()"
+        routerLinkActive="bg-white/10 text-white font-semibold"
+        class="flex items-center justify-between rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.16em] text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
+      >
+        <span>Labs</span>
+        <span class="text-quantum text-[10px]">04</span>
+      </a>
+      <a 
+        routerLink="/contacto" 
+        (click)="closeMobileMenu()"
+        routerLinkActive="bg-white/10 text-white font-semibold"
+        class="flex items-center justify-between rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.16em] text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
+      >
+        <span>Contacto</span>
+        <span class="text-quantum text-[10px]">05</span>
+      </a>
+    </nav>
+
+    <div class="mt-6 pt-4 border-t border-white/10">
+      <a 
+        routerLink="/contacto" 
+        (click)="closeMobileMenu()"
+        class="flex w-full items-center justify-center h-12 rounded-full bg-white text-xs font-semibold uppercase tracking-[0.14em] text-void shadow-lg transition-transform active:scale-95"
+      >
+        Solicitar Auditoría Técnica
+      </a>
     </div>
   </div>
 </header>
+

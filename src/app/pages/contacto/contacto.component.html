@@ -1,109 +1,137 @@
-<div class="pt-20 animate-fade-in">
-  <div class="max-w-7xl mx-auto px-8 section">
-    
-    <div class="text-center mb-16">
-      <h1 class="mb-4">Iniciemos con una <span class="text-gradient">Auditoría de Procesos</span> y Factibilidad</h1>
-      <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-        Evaluamos la arquitectura técnica actual de tu negocio, los cuellos de botella y la viabilidad computacional de tus proyectos.
+<div class="pt-28 sm:pt-36 pb-24 relative overflow-hidden">
+  <!-- Ambient background glow -->
+  <div class="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-quantum/[0.08] blur-[150px]"></div>
+
+  <div class="investor-container relative z-10">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <p class="eyebrow">Diagnóstico & Factibilidad</p>
+      <h1 class="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.035em] text-white">
+        Iniciemos con una <span class="bg-gradient-to-r from-white via-cyan-100 to-quantum bg-clip-text text-transparent">Auditoría Técnica</span>
+      </h1>
+      <p class="mt-6 text-base sm:text-lg text-zinc-400 leading-relaxed">
+        Evaluamos la arquitectura actual de tu negocio, cuellos de botella en bases de datos y la viabilidad computacional de tus proyectos con rigor de ingeniería.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <!-- Contact Form -->
-      <div class="glass-panel p-10">
-        <h3 class="mb-8">📝 Formulario de Solicitud</h3>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <!-- Contact Form (Apple Glass Card) -->
+      <div class="lg:col-span-7 glass-panel p-8 sm:p-12">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="font-mono text-xl font-bold text-quantum/60">01</span>
+          <h3 class="text-xl sm:text-2xl font-bold text-white font-sans">Formulario de Solicitud de Auditoría</h3>
+        </div>
         
-        <form>
-          <div class="mb-5">
-            <label class="block text-sm text-slate-400 mb-2">Nombre Completo</label>
-            <input type="text" class="input-field" placeholder="Daniel Narváez">
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Nombre Completo</label>
+              <input type="text" class="input-field" placeholder="Ing. Carlos Narváez">
+            </div>
+            
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Empresa / Organización</label>
+              <input type="text" class="input-field" placeholder="Empresa S.A.S.">
+            </div>
           </div>
           
-          <div class="mb-5">
-            <label class="block text-sm text-slate-400 mb-2">Empresa / Organización</label>
-            <input type="text" class="input-field" placeholder="Empresa Local S.A.S.">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Correo Corporativo</label>
+              <input type="email" class="input-field" placeholder="contacto@empresa.com">
+            </div>
+            
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Teléfono / WhatsApp</label>
+              <input type="tel" class="input-field" placeholder="+57 300 000 0000">
+            </div>
           </div>
           
-          <div class="mb-5">
-            <label class="block text-sm text-slate-400 mb-2">Correo Electrónico Corporativo</label>
-            <input type="email" class="input-field" placeholder="contacto@empresa.com">
-          </div>
-          
-          <div class="mb-5">
-            <label class="block text-sm text-slate-400 mb-2">Número de Teléfono / WhatsApp</label>
-            <input type="tel" class="input-field" placeholder="+57 300 000 0000">
-          </div>
-          
-          <div class="mb-5">
-            <label class="block text-sm text-slate-400 mb-2">Línea de Interés Principal</label>
-            <select class="input-field">
-              <option>Sistemas Web</option>
-              <option>Agentes NLP/RAG</option>
-              <option>Tesorería & Analítica</option>
-            </select>
-          </div>
-          
-          <div class="mb-5">
-            <label class="block text-sm text-slate-400 mb-2">Modelo de Ejecución Estimado</label>
-            <select class="input-field">
-              <option>Proyecto Fijo</option>
-              <option>Retainer SLA</option>
-              <option>Bolsa de Horas</option>
-            </select>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Línea de Interés Principal</label>
+              <select class="input-field bg-[#0c0c14] text-white">
+                <option>Sistemas Web & Transaccionales</option>
+                <option>Agentes de IA & RAG</option>
+                <option>Tesorería & Analítica Predictiva</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Modelo Estimado</label>
+              <select class="input-field bg-[#0c0c14] text-white">
+                <option>Proyecto Fijo (Llave en mano)</option>
+                <option>Evolución Continua (SLA + Retainer)</option>
+                <option>Bolsa de Horas (Sandbox / PoC)</option>
+              </select>
+            </div>
           </div>
 
-          <div class="mb-8">
-            <label class="block text-sm text-slate-400 mb-2">Breve descripción del problema</label>
-            <textarea class="input-field min-h-[120px] resize-y" rows="4" placeholder="Detalla brevemente el flujo repetitivo, dispersión de datos o requerimiento de software a resolver..."></textarea>
+          <div>
+            <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Descripción del Requerimiento o Cuello de Botella</label>
+            <textarea class="input-field min-h-[130px] resize-y" rows="4" placeholder="Describe brevemente la dispersión de datos, flujos manuales repetitivos o arquitectura que buscas optimizar..."></textarea>
           </div>
           
-          <button type="button" class="btn btn-primary w-full text-lg py-4">Enviar Solicitud de Auditoría →</button>
+          <button type="button" class="button-primary w-full text-sm py-4">
+            <span>Enviar Solicitud de Auditoría</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
         </form>
       </div>
 
-      <!-- Scheduling & Info -->
-      <div class="flex flex-col gap-8">
-        <div class="glass-panel p-10 border-l-[4px] border-l-accent shadow-[inset_0_0_30px_rgba(139,92,246,0.05)]">
-          <h3 class="mb-6">📅 Agendamiento Directo</h3>
-          <p class="text-slate-400 mb-6">Agenda una videollamada de diagnóstico (45 min) con los ingenieros fundadores.</p>
+      <!-- Scheduling & Direct Contacts -->
+      <div class="lg:col-span-5 flex flex-col gap-8">
+        <!-- Direct Scheduling Card -->
+        <div class="glass-panel p-8 sm:p-10 ring-1 ring-quantum/30 shadow-[0_0_35px_-10px_rgba(0,229,255,0.2)]">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-mono text-xl font-bold text-quantum/60">02</span>
+            <h3 class="text-xl font-bold text-white font-sans">Agendamiento Directo</h3>
+          </div>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">Agenda una inmersión técnica de 45 minutos con nuestros ingenieros directos.</p>
           
-          <ul class="text-sm text-slate-400 mb-8 space-y-2 leading-relaxed">
-            <li><strong class="text-white">Horarios disponibles (GMT-5 Colombia):</strong></li>
-            <li>• Lunes a Viernes: 08:00 AM - 12:00 PM</li>
-            <li>• Lunes a Viernes: 02:00 PM - 06:00 PM</li>
-            <li class="pt-2"><strong class="text-white">Modalidad:</strong></li>
-            <li>• Google Meet / Presencial en San Juan de Pasto</li>
-            <li class="text-success pt-2 font-medium">✓ Sin costo inicial para empresas regionales</li>
+          <ul class="text-xs text-zinc-300 mb-8 space-y-2.5 font-mono leading-relaxed">
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Lunes a Viernes: 08:00 AM - 12:00 PM (GMT-5)</li>
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Lunes a Viernes: 02:00 PM - 06:00 PM (GMT-5)</li>
+            <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Modalidad: Google Meet o Presencial en Pasto</li>
+            <li class="text-emerald-400 pt-2 font-medium flex items-center gap-1.5">✓ Sesión inicial sin costo para sector productivo</li>
           </ul>
           
-          <button class="btn btn-outline w-full block">Abrir Calendario de Citas 🗓️</button>
+          <a href="mailto:contacto@tensor.dev?subject=Solicitud%20Auditoría%20Técnica" class="button-ghost w-full flex items-center justify-center">
+            <span>Coordinar Cita Directa 🗓️</span>
+          </a>
         </div>
 
-        <div class="glass-panel p-10">
-          <h3 class="mb-6">📍 Canales Directos</h3>
-          
-          <div class="mb-6">
-            <h5 class="text-accent-light mb-1">🏢 Sede Operativa</h5>
-            <p class="text-sm text-slate-400">Tensor.Dev S.A.S.<br>San Juan de Pasto, Nariño 520001 — Colombia</p>
-          </div>
-          
-          <div class="mb-6">
-            <h5 class="text-accent-light mb-1">✉️ Correo de Ingeniería</h5>
-            <p class="text-sm text-slate-400">contacto&#64;tensor.dev</p>
-          </div>
-          
+        <!-- Headquarters & Channels -->
+        <div class="glass-panel p-8 sm:p-10 space-y-6">
           <div>
-            <h5 class="text-accent-light mb-1">💬 WhatsApp API</h5>
-            <p class="text-sm text-slate-400">+57 (300) 000-0000<br><span class="text-xs opacity-70">Respuesta promedio: < 15 min en horario hábil.</span></p>
+            <h5 class="font-mono text-xs uppercase tracking-wider text-quantum font-semibold mb-1">Sede de Ingeniería</h5>
+            <p class="text-xs sm:text-sm text-zinc-300">Tensor.Dev S.A.S.<br>San Juan de Pasto, Nariño 520001 — Colombia</p>
+          </div>
+          
+          <div class="border-t border-white/[0.06] pt-4">
+            <h5 class="font-mono text-xs uppercase tracking-wider text-quantum font-semibold mb-1">Correo Electrónico</h5>
+            <p class="text-xs sm:text-sm text-zinc-300">contacto&#64;tensor.dev</p>
+          </div>
+          
+          <div class="border-t border-white/[0.06] pt-4">
+            <h5 class="font-mono text-xs uppercase tracking-wider text-quantum font-semibold mb-1">WhatsApp API Directo</h5>
+            <p class="text-xs sm:text-sm text-zinc-300">+57 (300) 000-0000</p>
+            <p class="text-[11px] text-zinc-500 font-mono mt-0.5">Respuesta promedio en horario hábil: &lt; 15 min</p>
           </div>
         </div>
 
-        <div class="p-6 border border-dashed border-success/30 bg-success/5 rounded-xl text-slate-400">
-          <div class="flex items-start gap-4">
-            <div class="text-2xl mt-1">🛡️</div>
+        <!-- NDA Guarantee Banner -->
+        <div class="glass-panel p-6 border-emerald-500/20 bg-emerald-950/10 text-zinc-300">
+          <div class="flex items-start gap-3">
+            <span class="text-xl">🛡️</span>
             <div>
-              <strong class="text-success block mb-2">Compromiso de Confidencialidad (NDA)</strong>
-              <p class="text-sm leading-relaxed">Todos los datos operativos y balances compartidos en el diagnóstico son protegidos bajo acuerdo formal de confidencialidad y procesados en entornos locales o nubes cifradas.</p>
+              <strong class="text-white text-xs uppercase tracking-wider font-mono block mb-1">Garantía de Confidencialidad (NDA)</strong>
+              <p class="text-xs text-zinc-400 leading-relaxed font-sans">
+                Todo dato operativo, esquema de base de datos o modelo compartido cuenta con resguardo legal bajo acuerdo de no divulgación.
+              </p>
             </div>
           </div>
         </div>
@@ -112,3 +140,4 @@
 
   </div>
 </div>
+

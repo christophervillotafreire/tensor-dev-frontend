@@ -44,6 +44,46 @@
                 "glob": "transaccional.webp",
                 "input": "src/app/pages/home",
                 "output": "assets"
+              },
+              {
+                "glob": "agent_ia.jpg",
+                "input": "src/app/pages/home",
+                "output": ""
+              },
+              {
+                "glob": "agent_ia.webp",
+                "input": "src/app/pages/home",
+                "output": ""
+              },
+              {
+                "glob": "agent_ia.jpg",
+                "input": "src/app/pages/home",
+                "output": "assets"
+              },
+              {
+                "glob": "agent_ia.webp",
+                "input": "src/app/pages/home",
+                "output": "assets"
+              },
+              {
+                "glob": "tesoreria.jpeg",
+                "input": "src/app/pages/home",
+                "output": ""
+              },
+              {
+                "glob": "tesoreria.webp",
+                "input": "src/app/pages/home",
+                "output": ""
+              },
+              {
+                "glob": "tesoreria.jpeg",
+                "input": "src/app/pages/home",
+                "output": "assets"
+              },
+              {
+                "glob": "tesoreria.webp",
+                "input": "src/app/pages/home",
+                "output": "assets"
               }
             ],
             "styles": [

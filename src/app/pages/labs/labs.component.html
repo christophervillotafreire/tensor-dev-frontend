@@ -1,15 +1,15 @@
-<div class="pt-28 sm:pt-36 pb-24 relative overflow-hidden">
+<div class="pt-28 sm:pt-36 pb-0 relative overflow-hidden bg-[#07070b]">
   <!-- Ambient background glow -->
-  <div class="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-quantum/[0.08] blur-[150px]"></div>
+  <div class="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#2F6BFF]/[0.12] blur-[150px]"></div>
 
-  <div class="investor-container relative z-10">
+  <div class="investor-container relative z-10 pb-16">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <p class="eyebrow">Demostraciones Interactivas</p>
       <h1 class="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.035em] text-white">
-        Tensor Labs: <span class="bg-gradient-to-r from-white via-cyan-100 to-quantum bg-clip-text text-transparent">Simulador & Prototipos</span>
+        Tensor Labs: <span class="bg-gradient-to-r from-white via-blue-100 to-[#2F6BFF] bg-clip-text text-transparent">Simulador & Prototipos</span>
       </h1>
-      <p class="mt-6 text-base sm:text-lg text-zinc-400 leading-relaxed">
+      <p class="mt-6 text-base sm:text-lg text-zinc-300 leading-relaxed">
         Experimenta directamente con las capacidades de Tensor: nuestro digitalizador inteligente de registros para comercios y el calculador de presupuestos transparente para software y tutorías.
       </p>
 
@@ -18,7 +18,7 @@
         <button
           type="button"
           (click)="currentTab = 'repuestos'"
-          [ngClass]="currentTab === 'repuestos' ? 'bg-white text-void font-semibold shadow-md' : 'text-zinc-400 hover:text-white'"
+          [ngClass]="currentTab === 'repuestos' ? 'bg-[#2F6BFF] text-white font-bold shadow-md' : 'text-zinc-400 hover:text-white'"
           class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200"
         >
           📷 Demo 01: Digitalizador de Registros (IA)
@@ -26,19 +26,23 @@
         <button
           type="button"
           (click)="currentTab = 'cotizador'"
-          [ngClass]="currentTab === 'cotizador' ? 'bg-white text-void font-semibold shadow-md' : 'text-zinc-400 hover:text-white'"
+          [ngClass]="currentTab === 'cotizador' ? 'bg-[#2F6BFF] text-white font-bold shadow-md' : 'text-zinc-400 hover:text-white'"
           class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200"
         >
           🧮 Demo 02: Calculador de Presupuestos
         </button>
       </div>
     </div>
+  </div>
 
-    <!-- DEMO 1: DIGITALIZADOR DE REGISTROS CON IA (CASO REAL REPUESTOS) -->
-    <div *ngIf="currentTab === 'repuestos'" class="mb-24">
+  <!-- ========================================================================= -->
+  <!-- DEMO 1: DIGITALIZADOR DE REGISTROS CON IA (Consola Oscura con Acentos Azul)-->
+  <!-- ========================================================================= -->
+  <section *ngIf="currentTab === 'repuestos'" class="relative bg-[#07070e] text-white py-20 pb-28">
+    <div class="investor-container">
       <div class="mb-10 text-left max-w-3xl">
-        <div class="inline-flex items-center gap-2 rounded-full border border-quantum/30 bg-quantum/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-quantum mb-3">
-          <span class="h-1.5 w-1.5 rounded-full bg-quantum animate-pulse"></span>
+        <div class="inline-flex items-center gap-2 rounded-full border border-[#2F6BFF]/40 bg-[#2F6BFF]/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-[#5C98FF] mb-3">
+          <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF] animate-pulse"></span>
           Proyecto Insignia Validado
         </div>
         <h2 class="text-3xl sm:text-4xl font-bold text-white font-display">
@@ -54,7 +58,7 @@
         <div class="lg:col-span-5 glass-panel p-7 sm:p-8 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between border-b border-white/[0.06] pb-4 mb-6">
-              <span class="font-mono text-xs uppercase tracking-wider text-quantum font-semibold">1. Origen: Cuaderno de Ventas Físico</span>
+              <span class="font-mono text-xs uppercase tracking-wider text-[#5C98FF] font-semibold">1. Origen: Cuaderno de Ventas Físico</span>
               <span class="font-mono text-[10px] text-zinc-500 uppercase">Foto Capturada</span>
             </div>
 
@@ -85,7 +89,7 @@
                 type="button"
                 (click)="processPhotoAi()"
                 [disabled]="isProcessingAi"
-                class="button-primary w-full text-xs font-mono uppercase tracking-wider py-3.5 flex items-center justify-center gap-2"
+                class="button-blue w-full text-xs font-mono uppercase tracking-wider py-3.5 flex items-center justify-center gap-2"
               >
                 <span *ngIf="!isProcessingAi && !aiProcessed">⚡ Procesar Foto con IA</span>
                 <span *ngIf="isProcessingAi">🔄 Procesando Imagen y Discriminando Canales...</span>
@@ -141,7 +145,7 @@
                         <span 
                           [ngClass]="{
                             'text-zinc-300 bg-white/5': record.medio === 'Efectivo',
-                            'text-purple-400 bg-purple-950/40 border border-purple-500/30': record.medio === 'Nequi',
+                            'text-[#5C98FF] bg-[#2F6BFF]/20 border border-[#2F6BFF]/40': record.medio === 'Nequi',
                             'text-amber-300 bg-amber-950/40 border border-amber-500/30': record.medio === 'Bancolombia'
                           }"
                           class="px-2 py-0.5 rounded text-[10px]"
@@ -167,9 +171,9 @@
                   <span class="text-[10px] font-mono text-zinc-400 uppercase block">Efectivo</span>
                   <strong class="font-mono text-sm sm:text-base text-white">${{ totalEfectivo | number }}</strong>
                 </div>
-                <div class="rounded-xl border border-purple-500/20 bg-purple-950/20 p-3 text-center">
-                  <span class="text-[10px] font-mono text-purple-300 uppercase block">Nequi</span>
-                  <strong class="font-mono text-sm sm:text-base text-purple-300">${{ totalNequi | number }}</strong>
+                <div class="rounded-xl border border-[#2F6BFF]/30 bg-[#2F6BFF]/10 p-3 text-center">
+                  <span class="text-[10px] font-mono text-[#5C98FF] uppercase block">Nequi</span>
+                  <strong class="font-mono text-sm sm:text-base text-[#5C98FF]">${{ totalNequi | number }}</strong>
                 </div>
                 <div class="rounded-xl border border-amber-500/20 bg-amber-950/20 p-3 text-center">
                   <span class="text-[10px] font-mono text-amber-300 uppercase block">Bancolombia</span>
@@ -178,12 +182,12 @@
               </div>
 
               <!-- Gran Total -->
-              <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-4 flex items-center justify-between">
+              <div class="rounded-xl border border-[#2F6BFF]/40 bg-[#0e1424] p-4 flex items-center justify-between">
                 <div>
-                  <span class="text-[11px] font-mono uppercase text-emerald-400 block font-semibold">Total Ventas Diarias Conciliadas</span>
+                  <span class="text-[11px] font-mono uppercase text-[#5C98FF] block font-semibold">Total Ventas Diarias Conciliadas</span>
                   <span class="text-xs text-zinc-400">Listo para consolidar en el resumen mensual de gastos</span>
                 </div>
-                <div class="text-xl sm:text-2xl font-mono font-bold text-emerald-400">
+                <div class="text-xl sm:text-2xl font-mono font-bold text-white">
                   ${{ granTotal | number }} COP
                 </div>
               </div>
@@ -210,162 +214,165 @@
 
           <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-zinc-400">
             <span>¿Interesado en implementar esto en tu negocio?</span>
-            <a routerLink="/contacto" class="text-quantum hover:underline">Cotizar Solución →</a>
+            <a routerLink="/contacto" class="text-[#5C98FF] hover:underline">Cotizar Solución →</a>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- DEMO 2: CALCULADOR DE PRESUPUESTOS (SOFTWARE Y TUTORÍAS) -->
-    <div *ngIf="currentTab === 'cotizador'" class="mb-24">
-      <div class="mb-10 text-left max-w-3xl">
-        <div class="inline-flex items-center gap-2 rounded-full border border-quantum/30 bg-quantum/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-quantum mb-3">
-          <span class="h-1.5 w-1.5 rounded-full bg-quantum animate-pulse"></span>
-          Transparencia Total
+  <!-- ========================================================================= -->
+  <!-- DEMO 2: CALCULADOR DE PRESUPUESTOS EN SECCIÓN BLANCA (Estilo Lab10.ai)     -->
+  <!-- ========================================================================= -->
+  <section *ngIf="currentTab === 'cotizador'" class="section-white py-24 md:py-32">
+    <div class="investor-container">
+      <div class="mb-12 text-left max-w-3xl">
+        <div class="badge-light-blue mb-3">
+          <span>Transparencia Total</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white font-display">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-zinc-950 tracking-[-0.03em]">
           Calculador de Presupuestos & Planes Tensor
         </h2>
-        <p class="text-zinc-400 text-sm sm:text-base mt-2 leading-relaxed">
+        <p class="text-zinc-600 text-sm sm:text-base mt-2 leading-relaxed">
           Nuestra política de precios se basa en el esfuerzo real de desarrollo y en compensaciones justas para tutores. Utiliza este simulador para estimar tu inversión en pesos colombianos.
         </p>
       </div>
 
       <!-- Selector de División en el Cotizador -->
-      <div class="flex gap-4 mb-8">
+      <div class="flex flex-col sm:flex-row gap-4 mb-10">
         <button
           type="button"
           (click)="calcDivision = 'tech'"
-          [ngClass]="calcDivision === 'tech' ? 'border-quantum text-white bg-quantum/10 shadow-[0_0_20px_rgba(0,229,255,0.2)]' : 'border-white/10 text-zinc-400 bg-white/[0.02]'"
-          class="flex-1 py-3 px-5 rounded-xl border text-xs sm:text-sm font-mono uppercase tracking-wider transition-all"
+          [ngClass]="calcDivision === 'tech' ? 'border-[#2F6BFF] text-white bg-[#2F6BFF] shadow-[0_4px_16px_rgba(47,107,255,0.35)]' : 'border-zinc-200 text-zinc-700 bg-white hover:bg-zinc-50'"
+          class="flex-1 py-3.5 px-5 rounded-xl border text-xs sm:text-sm font-mono uppercase tracking-wider font-semibold transition-all"
         >
           💻 Estimar Proyecto de Software / Automatización
         </button>
         <button
           type="button"
           (click)="calcDivision = 'edu'"
-          [ngClass]="calcDivision === 'edu' ? 'border-quantum text-white bg-quantum/10 shadow-[0_0_20px_rgba(0,229,255,0.2)]' : 'border-white/10 text-zinc-400 bg-white/[0.02]'"
-          class="flex-1 py-3 px-5 rounded-xl border text-xs sm:text-sm font-mono uppercase tracking-wider transition-all"
+          [ngClass]="calcDivision === 'edu' ? 'border-[#2F6BFF] text-white bg-[#2F6BFF] shadow-[0_4px_16px_rgba(47,107,255,0.35)]' : 'border-zinc-200 text-zinc-700 bg-white hover:bg-zinc-50'"
+          class="flex-1 py-3.5 px-5 rounded-xl border text-xs sm:text-sm font-mono uppercase tracking-wider font-semibold transition-all"
         >
           🎓 Estimar Paquete de Tutorías Académicas
         </button>
       </div>
 
-      <!-- Formulario & Resultado Tech -->
+      <!-- Formulario & Resultado Tech en Cards Blancas -->
       <div *ngIf="calcDivision === 'tech'" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <div class="lg:col-span-7 glass-panel p-8 space-y-6">
-          <h3 class="text-xl font-bold text-white font-display mb-4">Parámetros del Proyecto Tecnológico</h3>
+        <div class="lg:col-span-7 card-white p-8 space-y-6">
+          <h3 class="text-xl font-bold text-zinc-950 font-display mb-4">Parámetros del Proyecto Tecnológico</h3>
 
           <div>
-            <label class="block text-xs font-mono uppercase text-zinc-400 mb-2">Alcance del Proyecto</label>
+            <label class="block text-xs font-mono uppercase text-zinc-500 mb-2 font-medium">Alcance del Proyecto</label>
             <div class="space-y-3">
-              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-white/5 bg-white/[0.02] cursor-pointer hover:border-quantum/30">
-                <input type="radio" name="techScope" value="piloto" [(ngModel)]="techScope" class="accent-cyan-400">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-zinc-200 bg-zinc-50/70 cursor-pointer hover:border-[#2F6BFF]">
+                <input type="radio" name="techScope" value="piloto" [(ngModel)]="techScope" class="accent-[#2F6BFF]">
                 <div>
-                  <strong class="text-white text-xs block">Proyecto Piloto Sencillo (Recomendado para validación)</strong>
-                  <span class="text-zinc-400 text-xs">Digitalización de registros en papel o automatización puntual de reportes (aprox. 12h de desarrollo).</span>
+                  <strong class="text-zinc-950 text-xs block">Proyecto Piloto Sencillo (Recomendado para validación)</strong>
+                  <span class="text-zinc-500 text-xs">Digitalización de registros en papel o automatización puntual de reportes (aprox. 12h de desarrollo).</span>
                 </div>
               </label>
 
-              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-white/5 bg-white/[0.02] cursor-pointer hover:border-quantum/30">
-                <input type="radio" name="techScope" value="medio" [(ngModel)]="techScope" class="accent-cyan-400">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-zinc-200 bg-zinc-50/70 cursor-pointer hover:border-[#2F6BFF]">
+                <input type="radio" name="techScope" value="medio" [(ngModel)]="techScope" class="accent-[#2F6BFF]">
                 <div>
-                  <strong class="text-white text-xs block">Sistema de Control Operativo Intermedio</strong>
-                  <span class="text-zinc-400 text-xs">Módulos básicos de inventario, registro de ventas, gastos y cuentas por cobrar.</span>
+                  <strong class="text-zinc-950 text-xs block">Sistema de Control Operativo Intermedio</strong>
+                  <span class="text-zinc-500 text-xs">Módulos básicos de inventario, registro de ventas, gastos y cuentas por cobrar.</span>
                 </div>
               </label>
 
-              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-white/5 bg-white/[0.02] cursor-pointer hover:border-quantum/30">
-                <input type="radio" name="techScope" value="personalizado" [(ngModel)]="techScope" class="accent-cyan-400">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-zinc-200 bg-zinc-50/70 cursor-pointer hover:border-[#2F6BFF]">
+                <input type="radio" name="techScope" value="personalizado" [(ngModel)]="techScope" class="accent-[#2F6BFF]">
                 <div>
-                  <strong class="text-white text-xs block">Desarrollo Web o Aplicación a Medida</strong>
-                  <span class="text-zinc-400 text-xs">Herramienta web personalizada con múltiples interfaces y flujos de automatización integrados.</span>
+                  <strong class="text-zinc-950 text-xs block">Desarrollo Web o Aplicación a Medida</strong>
+                  <span class="text-zinc-500 text-xs">Herramienta web personalizada con múltiples interfaces y flujos de automatización integrados.</span>
                 </div>
               </label>
             </div>
           </div>
 
-          <div class="pt-4 border-t border-white/5">
-            <label class="flex items-center gap-3 p-3 rounded-xl border border-white/5 bg-white/[0.02] cursor-pointer hover:border-quantum/30">
-              <input type="checkbox" [(ngModel)]="includeMaintenance" class="accent-cyan-400 h-4 w-4">
+          <div class="pt-4 border-t border-zinc-100">
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-zinc-200 bg-zinc-50/70 cursor-pointer hover:border-[#2F6BFF]">
+              <input type="checkbox" [(ngModel)]="includeMaintenance" class="accent-[#2F6BFF] h-4 w-4">
               <div>
-                <strong class="text-white text-xs block">Incluir Soporte y Mantenimiento Mensual Voluntario</strong>
-                <span class="text-zinc-400 text-xs">Acompañamiento correctivo, ajustes de datos y soporte continuo ($180.000 COP/mes).</span>
+                <strong class="text-zinc-950 text-xs block">Incluir Soporte y Mantenimiento Mensual Voluntario</strong>
+                <span class="text-zinc-500 text-xs">Acompañamiento correctivo, ajustes de datos y soporte continuo ($180.000 COP/mes).</span>
               </div>
             </label>
           </div>
         </div>
 
-        <div class="lg:col-span-5 glass-panel p-8 flex flex-col justify-between ring-1 ring-quantum/30">
+        <div class="lg:col-span-5 card-white p-8 flex flex-col justify-between border-blue-200 ring-1 ring-[#2F6BFF]/20 shadow-lg">
           <div>
-            <div class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold mb-2">Cotización Estimada</div>
-            <h4 class="text-2xl font-bold text-white font-display mb-6">Desglose de Inversión</h4>
+            <div class="font-mono text-xs uppercase tracking-widest text-[#2F6BFF] font-semibold mb-2">Cotización Estimada</div>
+            <h4 class="text-2xl font-bold text-zinc-950 font-display mb-6">Desglose de Inversión</h4>
 
             <div class="space-y-4 font-mono text-xs">
-              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+              <div class="flex justify-between border-b border-zinc-100 pb-2 text-zinc-700">
                 <span>Desarrollo del Proyecto:</span>
-                <strong class="text-white">${{ techPrice | number }} COP</strong>
+                <strong class="text-zinc-950 font-bold">${{ techPrice | number }} COP</strong>
               </div>
-              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+              <div class="flex justify-between border-b border-zinc-100 pb-2 text-zinc-700">
                 <span>Anticipo Inicial (50%):</span>
-                <strong class="text-cyan-300">${{ (techPrice / 2) | number }} COP</strong>
+                <strong class="text-[#2F6BFF] font-bold">${{ (techPrice / 2) | number }} COP</strong>
               </div>
-              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+              <div class="flex justify-between border-b border-zinc-100 pb-2 text-zinc-700">
                 <span>Saldo contra Entrega y Aceptación (50%):</span>
-                <strong class="text-cyan-300">${{ (techPrice / 2) | number }} COP</strong>
+                <strong class="text-[#2F6BFF] font-bold">${{ (techPrice / 2) | number }} COP</strong>
               </div>
-              <div *ngIf="includeMaintenance" class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+              <div *ngIf="includeMaintenance" class="flex justify-between border-b border-zinc-100 pb-2 text-zinc-700">
                 <span>Mantenimiento Mensual Opcional:</span>
-                <strong class="text-emerald-400">+ ${{ techMaintenance | number }} COP/mes</strong>
+                <strong class="text-emerald-600 font-bold">+ ${{ techMaintenance | number }} COP/mes</strong>
               </div>
             </div>
 
-            <div class="mt-8 rounded-xl bg-white/[0.03] border border-white/10 p-4">
-              <span class="text-[11px] font-mono uppercase text-zinc-400 block mb-1">Garantía de Compromiso</span>
-              <p class="text-xs text-zinc-300 font-sans leading-relaxed">
+            <div class="mt-8 rounded-xl bg-blue-50/60 border border-blue-200 p-4">
+              <span class="text-[11px] font-mono uppercase text-blue-700 block mb-1 font-semibold">Garantía de Compromiso</span>
+              <p class="text-xs text-zinc-600 font-sans leading-relaxed">
                 Cada proyecto incluye levantamiento de requisitos, pruebas de calidad, capacitación al personal y delimitación estricta de tareas.
               </p>
             </div>
           </div>
 
           <div class="mt-8">
-            <a routerLink="/contacto" class="button-primary text-xs w-full text-center">
+            <a routerLink="/contacto" class="button-blue text-xs w-full text-center">
               Solicitar Propuesta para este Proyecto
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Formulario & Resultado Edu -->
+      <!-- Formulario & Resultado Edu en Cards Blancas -->
       <div *ngIf="calcDivision === 'edu'" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <div class="lg:col-span-7 glass-panel p-8 space-y-6">
-          <h3 class="text-xl font-bold text-white font-display mb-4">Configurar Plan de Tutorías</h3>
+        <div class="lg:col-span-7 card-white p-8 space-y-6">
+          <h3 class="text-xl font-bold text-zinc-950 font-display mb-4">Configurar Plan de Tutorías</h3>
 
           <!-- Nivel Académico -->
           <div>
-            <label class="block text-xs font-mono uppercase text-zinc-400 mb-2">Nivel Académico del Estudiante</label>
+            <label class="block text-xs font-mono uppercase text-zinc-500 mb-2 font-medium">Nivel Académico del Estudiante</label>
             <div class="grid grid-cols-3 gap-3">
               <button
                 type="button"
                 (click)="eduLevel = 'primaria'"
-                [ngClass]="eduLevel === 'primaria' ? 'border-quantum bg-quantum/10 text-white' : 'border-white/10 text-zinc-400'"
-                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase"
+                [ngClass]="eduLevel === 'primaria' ? 'border-[#2F6BFF] bg-blue-50 text-[#1D4ED8] font-bold' : 'border-zinc-200 text-zinc-600 bg-white'"
+                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase transition-all"
               >
                 Primaria
               </button>
               <button
                 type="button"
                 (click)="eduLevel = 'bachillerato'"
-                [ngClass]="eduLevel === 'bachillerato' ? 'border-quantum bg-quantum/10 text-white' : 'border-white/10 text-zinc-400'"
-                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase"
+                [ngClass]="eduLevel === 'bachillerato' ? 'border-[#2F6BFF] bg-blue-50 text-[#1D4ED8] font-bold' : 'border-zinc-200 text-zinc-600 bg-white'"
+                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase transition-all"
               >
                 Bachillerato
               </button>
               <button
                 type="button"
                 (click)="eduLevel = 'universidad'"
-                [ngClass]="eduLevel === 'universidad' ? 'border-quantum bg-quantum/10 text-white' : 'border-white/10 text-zinc-400'"
-                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase"
+                [ngClass]="eduLevel === 'universidad' ? 'border-[#2F6BFF] bg-blue-50 text-[#1D4ED8] font-bold' : 'border-zinc-200 text-zinc-600 bg-white'"
+                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase transition-all"
               >
                 Universidad
               </button>
@@ -374,21 +381,21 @@
 
           <!-- Modalidad -->
           <div>
-            <label class="block text-xs font-mono uppercase text-zinc-400 mb-2">Modalidad de Tutoría</label>
+            <label class="block text-xs font-mono uppercase text-zinc-500 mb-2 font-medium">Modalidad de Tutoría</label>
             <div class="grid grid-cols-2 gap-3">
               <button
                 type="button"
                 (click)="eduModalidad = 'virtual'"
-                [ngClass]="eduModalidad === 'virtual' ? 'border-quantum bg-quantum/10 text-white' : 'border-white/10 text-zinc-400'"
-                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase"
+                [ngClass]="eduModalidad === 'virtual' ? 'border-[#2F6BFF] bg-blue-50 text-[#1D4ED8] font-bold' : 'border-zinc-200 text-zinc-600 bg-white'"
+                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase transition-all"
               >
                 🌐 Virtual (Online)
               </button>
               <button
                 type="button"
                 (click)="eduModalidad = 'presencial'"
-                [ngClass]="eduModalidad === 'presencial' ? 'border-quantum bg-quantum/10 text-white' : 'border-white/10 text-zinc-400'"
-                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase"
+                [ngClass]="eduModalidad === 'presencial' ? 'border-[#2F6BFF] bg-blue-50 text-[#1D4ED8] font-bold' : 'border-zinc-200 text-zinc-600 bg-white'"
+                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase transition-all"
               >
                 📍 Presencial (Pasto)
               </button>
@@ -397,8 +404,8 @@
 
           <!-- Número de Sesiones -->
           <div>
-            <label class="block text-xs font-mono uppercase text-zinc-400 mb-2">
-              Número de Horas / Sesiones: <span class="text-quantum font-bold">{{ eduSessions }} horas</span>
+            <label class="block text-xs font-mono uppercase text-zinc-500 mb-2 font-medium">
+              Número de Horas / Sesiones: <span class="text-[#2F6BFF] font-bold">{{ eduSessions }} horas</span>
             </label>
             <input
               type="range"
@@ -406,9 +413,9 @@
               max="20"
               step="1"
               [(ngModel)]="eduSessions"
-              class="w-full accent-cyan-400"
+              class="w-full accent-[#2F6BFF]"
             />
-            <div class="flex justify-between text-[11px] font-mono text-zinc-500 mt-1">
+            <div class="flex justify-between text-[11px] font-mono text-zinc-400 mt-1">
               <span>1 hora (sesión individual)</span>
               <span>5 horas (refuerzo)</span>
               <span>10 horas (paquete mensual)</span>
@@ -417,46 +424,45 @@
           </div>
         </div>
 
-        <div class="lg:col-span-5 glass-panel p-8 flex flex-col justify-between ring-1 ring-quantum/30">
+        <div class="lg:col-span-5 card-white p-8 flex flex-col justify-between border-blue-200 ring-1 ring-[#2F6BFF]/20 shadow-lg">
           <div>
-            <div class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold mb-2">Tarifa Estimada</div>
-            <h4 class="text-2xl font-bold text-white font-display mb-6">Resumen de Tutoría</h4>
+            <div class="font-mono text-xs uppercase tracking-widest text-[#2F6BFF] font-semibold mb-2">Tarifa Estimada</div>
+            <h4 class="text-2xl font-bold text-zinc-950 font-display mb-6">Resumen de Tutoría</h4>
 
             <div class="space-y-4 font-mono text-xs">
-              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+              <div class="flex justify-between border-b border-zinc-100 pb-2 text-zinc-700">
                 <span>Valor por Hora:</span>
-                <strong class="text-white">${{ pricePerHour | number }} COP / hora</strong>
+                <strong class="text-zinc-950 font-bold">${{ pricePerHour | number }} COP / hora</strong>
               </div>
-              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+              <div class="flex justify-between border-b border-zinc-100 pb-2 text-zinc-700">
                 <span>Cantidad de Horas:</span>
-                <strong class="text-white">{{ eduSessions }} horas</strong>
+                <strong class="text-zinc-950 font-bold">{{ eduSessions }} horas</strong>
               </div>
-              <div *ngIf="eduSessions >= 5" class="flex justify-between border-b border-white/5 pb-2 text-emerald-400">
+              <div *ngIf="eduSessions >= 5" class="flex justify-between border-b border-zinc-100 pb-2 text-emerald-600">
                 <span>Descuento por Paquete:</span>
-                <strong>{{ eduSessions >= 10 ? '10% OFF' : '5% OFF' }}</strong>
+                <strong class="font-bold">{{ eduSessions >= 10 ? '10% OFF' : '5% OFF' }}</strong>
               </div>
-              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+              <div class="flex justify-between border-b border-zinc-100 pb-2 text-zinc-700">
                 <span>Inversión Total Estimada:</span>
-                <strong class="text-xl text-emerald-400">${{ totalEduPrice | number }} COP</strong>
+                <strong class="text-xl text-[#2F6BFF] font-bold">${{ totalEduPrice | number }} COP</strong>
               </div>
             </div>
 
-            <div class="mt-8 rounded-xl bg-white/[0.03] border border-white/10 p-4">
-              <span class="text-[11px] font-mono uppercase text-zinc-400 block mb-1">Garantía Pedagógica</span>
-              <p class="text-xs text-zinc-300 font-sans leading-relaxed">
+            <div class="mt-8 rounded-xl bg-blue-50/60 border border-blue-200 p-4">
+              <span class="text-[11px] font-mono uppercase text-blue-700 block mb-1 font-semibold">Garantía Pedagógica</span>
+              <p class="text-xs text-zinc-600 font-sans leading-relaxed">
                 Tutor calificado y verificado en la materia, seguimiento continuo de aprendizaje y reprogramación flexible con aviso previo.
               </p>
             </div>
           </div>
 
           <div class="mt-8">
-            <a routerLink="/contacto" class="button-primary text-xs w-full text-center">
+            <a routerLink="/contacto" class="button-blue text-xs w-full text-center">
               Agendar Tutoría con Este Plan
             </a>
           </div>
         </div>
       </div>
     </div>
-
-  </div>
+  </section>
 </div>

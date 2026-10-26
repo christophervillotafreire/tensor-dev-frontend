@@ -10,9 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './servicios.component.css'
 })
 export class ServiciosComponent {
-  activeTab: 'all' | 'tech' | 'edu' = 'all';
+  activeTab: 'tech' | 'edu' = 'tech';
 
-  setTab(tab: 'all' | 'tech' | 'edu') {
+  setTab(tab: 'tech' | 'edu') {
     this.activeTab = tab;
   }
 }

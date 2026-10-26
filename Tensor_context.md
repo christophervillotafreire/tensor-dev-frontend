@@ -233,7 +233,7 @@ Los precios definitivos deberán establecerse mediante pruebas comerciales, esti
 
 ### 6.1. Proyectos tecnológicos
 
-Como hipótesis inicial de validación, un proyecto pequeño de automatización podría cotizarse en un rango de $600.000 a $1.200.000 COP, dependiendo del alcance.
+Como hipótesis inicial de validación, un proyecto pequeño de automatización podría cotizarse en un rango de $200.000 a $1.200.000 COP, dependiendo del alcance.
 
 Un valor de referencia de $900.000 COP podría utilizarse para evaluar un proyecto piloto sencillo, siempre que el diagnóstico confirme que las tareas, el tiempo y los costos caben en ese presupuesto.
 
@@ -250,7 +250,7 @@ Antes de cotizar, Tensor deberá estimar:
 
 Como ejemplo, si un proyecto se vende por $900.000 COP y requiere doce horas de trabajo total, el ingreso bruto equivalente es de $75.000 COP por hora de trabajo. Esto no representa la ganancia neta, ya que todavía deben descontarse los costos y demás obligaciones aplicables.
 
-Podrá evaluarse un servicio de mantenimiento mensual, por ejemplo entre $120.000 y $250.000 COP, siempre que incluya tareas y límites explícitos. No se ofrecerá soporte ilimitado por una tarifa fija sin haber calculado sus implicaciones.
+Podrá evaluarse un servicio de mantenimiento mensual, por ejemplo entre $40.000 y $180.000 COP, siempre que incluya tareas y límites explícitos. No se ofrecerá soporte ilimitado por una tarifa fija sin haber calculado sus implicaciones.
 
 Para proyectos pequeños, podría proponerse un pago inicial del 50 % y el saldo contra entrega y aceptación. Las condiciones específicas dependerán del proyecto y del acuerdo con el cliente.
 

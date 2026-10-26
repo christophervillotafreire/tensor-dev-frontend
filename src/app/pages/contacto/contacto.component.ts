@@ -19,10 +19,10 @@ export class ContactoComponent {
   empresa = '';
   correo = '';
   telefono = '';
-  
+
   // Tech fields
   necesidadTech = 'Digitalización de registros y reportes';
-  presupuestoEstimado = '$600.000 - $1.200.000 COP (Piloto)';
+  presupuestoEstimado = '$200.000 - $1.200.000 COP (Piloto)';
 
   // Edu fields
   nivelEdu = 'Bachillerato';

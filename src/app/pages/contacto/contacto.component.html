@@ -1,271 +1,311 @@
-<div class="pt-28 sm:pt-36 pb-24 relative overflow-hidden">
+<div class="pt-28 sm:pt-36 pb-0 relative overflow-hidden bg-[#07070b]">
   <!-- Ambient background glow -->
-  <div class="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-quantum/[0.08] blur-[150px]"></div>
+  <div
+    class="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#2F6BFF]/[0.12] blur-[150px]">
+  </div>
 
-  <div class="investor-container relative z-10">
+  <div class="investor-container relative z-10 pb-16">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <p class="eyebrow">Atención Directa</p>
       <h1 class="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.035em] text-white">
-        Conversemos con <span class="bg-gradient-to-r from-white via-cyan-100 to-quantum bg-clip-text text-transparent">Total Transparencia</span>
+        Conversemos con <span
+          class="bg-gradient-to-r from-white via-blue-100 to-[#2F6BFF] bg-clip-text text-transparent">Total
+          Transparencia</span>
       </h1>
-      <p class="mt-6 text-base sm:text-lg text-zinc-400 leading-relaxed">
-        Ya sea para digitalizar los procesos de tu negocio, coordinar tutorías académicas o postularte como tutor de nuestra red, atendemos cada solicitud directamente desde el equipo fundador.
+      <p class="mt-6 text-base sm:text-lg text-zinc-300 leading-relaxed">
+        Ya sea para digitalizar los procesos de tu negocio, coordinar tutorías académicas o postularte como tutor de
+        nuestra red, atendemos cada solicitud directamente desde el equipo fundador.
       </p>
 
       <!-- Selector de Tipo de Contacto -->
-      <div class="mt-10 inline-flex flex-wrap justify-center items-center gap-2 rounded-2xl sm:rounded-full border border-white/10 bg-white/[0.04] p-1.5 backdrop-blur-xl shadow-lg">
-        <button
-          type="button"
-          (click)="setContactType('tech')"
-          [ngClass]="contactType === 'tech' ? 'bg-white text-void font-semibold shadow-md' : 'text-zinc-400 hover:text-white'"
-          class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200"
-        >
+      <div
+        class="mt-10 inline-flex flex-wrap justify-center items-center gap-2 rounded-2xl sm:rounded-full border border-white/10 bg-white/[0.04] p-1.5 backdrop-blur-xl shadow-lg">
+        <button type="button" (click)="setContactType('tech')"
+          [ngClass]="contactType === 'tech' ? 'bg-[#2F6BFF] text-white font-bold shadow-md' : 'text-zinc-400 hover:text-white'"
+          class="px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200">
           💻 Servicios de Tecnología
         </button>
-        <button
-          type="button"
-          (click)="setContactType('edu')"
-          [ngClass]="contactType === 'edu' ? 'bg-white text-void font-semibold shadow-md' : 'text-zinc-400 hover:text-white'"
-          class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200"
-        >
+        <button type="button" (click)="setContactType('edu')"
+          [ngClass]="contactType === 'edu' ? 'bg-[#2F6BFF] text-white font-bold shadow-md' : 'text-zinc-400 hover:text-white'"
+          class="px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200">
           🎓 Solicitar Tutoría Académica
         </button>
-        <button
-          type="button"
-          (click)="setContactType('tutor')"
-          [ngClass]="contactType === 'tutor' ? 'bg-white text-void font-semibold shadow-md' : 'text-zinc-400 hover:text-white'"
-          class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200"
-        >
+        <button type="button" (click)="setContactType('tutor')"
+          [ngClass]="contactType === 'tutor' ? 'bg-[#2F6BFF] text-white font-bold shadow-md' : 'text-zinc-400 hover:text-white'"
+          class="px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200">
           🧑‍🏫 Quiero ser Tutor
         </button>
       </div>
     </div>
+  </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-      <!-- Columna Formulario -->
-      <div class="lg:col-span-7 glass-panel p-8 sm:p-12">
-        <!-- Mensaje de Éxito al Enviar -->
-        <div *ngIf="isSubmitted" class="py-12 text-center space-y-4">
-          <div class="h-16 w-16 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl">
-            ✓
-          </div>
-          <h3 class="text-2xl font-bold text-white font-display">¡Solicitud Recibida con Éxito!</h3>
-          <p class="text-sm text-zinc-300 max-w-md mx-auto leading-relaxed">
-            Gracias por comunicarte con Tensor. Uno de los tres socios fundadores revisará tu solicitud y se pondrá en contacto contigo en menos de 24 horas hábiles.
-          </p>
-          <div class="pt-4">
-            <button
-              type="button"
-              (click)="resetForm()"
-              class="button-ghost text-xs"
-            >
-              Enviar Otra Solicitud
-            </button>
-          </div>
-        </div>
-
-        <!-- Formulario Activo -->
-        <div *ngIf="!isSubmitted">
-          <div class="flex items-center gap-3 mb-8">
-            <span class="font-mono text-xl font-bold text-quantum/60">01</span>
-            <div>
-              <h3 *ngIf="contactType === 'tech'" class="text-xl sm:text-2xl font-bold text-white font-display">
-                Cotizar Solución Tecnológica o Software
-              </h3>
-              <h3 *ngIf="contactType === 'edu'" class="text-xl sm:text-2xl font-bold text-white font-display">
-                Solicitar Refuerzo o Tutoría Académica
-              </h3>
-              <h3 *ngIf="contactType === 'tutor'" class="text-xl sm:text-2xl font-bold text-white font-display">
-                Postulación para la Red de Tutores
-              </h3>
-              <p class="text-xs text-zinc-400 mt-1">Completa los campos y responderemos con una propuesta aterrizada.</p>
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN EN COLOR BLANCO: Formulario & Canales de Contacto (Estilo Lab10)  -->
+  <!-- ========================================================================= -->
+  <section class="section-white py-24 md:py-32">
+    <div class="investor-container">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- Columna Formulario en Card Blanca -->
+        <div class="lg:col-span-7 card-white p-8 sm:p-12 shadow-lg">
+          <!-- Mensaje de Éxito al Enviar -->
+          <div *ngIf="isSubmitted" class="py-12 text-center space-y-4">
+            <div
+              class="h-16 w-16 mx-auto rounded-full bg-blue-50 text-[#2F6BFF] border border-blue-200 flex items-center justify-center text-3xl font-bold">
+              ✓
+            </div>
+            <h3 class="text-2xl font-bold text-zinc-950 font-display">¡Solicitud Recibida con Éxito!</h3>
+            <p class="text-sm text-zinc-600 max-w-md mx-auto leading-relaxed">
+              Gracias por comunicarte con Tensor. Uno de los tres socios fundadores revisará tu solicitud y se pondrá en
+              contacto contigo en menos de 24 horas hábiles.
+            </p>
+            <div class="pt-4">
+              <button type="button" (click)="resetForm()" class="button-dark text-xs">
+                Enviar Otra Solicitud
+              </button>
             </div>
           </div>
-          
-          <form (ngSubmit)="onSubmit()" class="space-y-6">
-            <!-- Datos Generales -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Nombre Completo *</label>
-                <input type="text" [(ngModel)]="nombre" name="nombre" required class="input-field" placeholder="Ej. Juan Pérez">
-              </div>
-              
-              <div *ngIf="contactType === 'tech'">
-                <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Nombre del Negocio o Comercio</label>
-                <input type="text" [(ngModel)]="empresa" name="empresa" class="input-field" placeholder="Ej. Repuestos La 17">
-              </div>
 
-              <div *ngIf="contactType === 'edu'">
-                <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Nombre del Acudiente (si es menor)</label>
-                <input type="text" [(ngModel)]="empresa" name="empresa" class="input-field" placeholder="Ej. Madre / Padre de familia">
-              </div>
-
-              <div *ngIf="contactType === 'tutor'">
-                <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Carrera Universitaria o Profesión *</label>
-                <input type="text" [(ngModel)]="carreraOProfesion" name="carreraOProfesion" required class="input-field" placeholder="Ej. Ing. de Sistemas / Lic. Matemáticas">
-              </div>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Formulario Activo -->
+          <div *ngIf="!isSubmitted">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="font-mono text-xl font-bold text-[#2F6BFF]">01</span>
               <div>
-                <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Correo Electrónico *</label>
-                <input type="email" [(ngModel)]="correo" name="correo" required class="input-field" placeholder="correo@ejemplo.com">
-              </div>
-              
-              <div>
-                <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Teléfono o WhatsApp *</label>
-                <input type="tel" [(ngModel)]="telefono" name="telefono" required class="input-field" placeholder="+57 300 000 0000">
+                <h3 *ngIf="contactType === 'tech'" class="text-xl sm:text-2xl font-bold text-zinc-950 font-display">
+                  Cotizar Solución Tecnológica o Software
+                </h3>
+                <h3 *ngIf="contactType === 'edu'" class="text-xl sm:text-2xl font-bold text-zinc-950 font-display">
+                  Solicitar Refuerzo o Tutoría Académica
+                </h3>
+                <h3 *ngIf="contactType === 'tutor'" class="text-xl sm:text-2xl font-bold text-zinc-950 font-display">
+                  Postulación para la Red de Tutores
+                </h3>
+                <p class="text-xs text-zinc-500 mt-1">Completa los campos y responderemos con una propuesta aterrizada.
+                </p>
               </div>
             </div>
 
-            <!-- Campos Específicos para Tecnología -->
-            <div *ngIf="contactType === 'tech'" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Tipo de Necesidad</label>
-                <select [(ngModel)]="necesidadTech" name="necesidadTech" class="input-field bg-[#0c0c14] text-white">
-                  <option>Digitalización de registros en papel (con IA)</option>
-                  <option>Sistema básico de inventario, ventas y gastos</option>
-                  <option>Página o aplicación web a medida</option>
-                  <option>Automatización de reportes internos</option>
-                  <option>Asesoría tecnológica básica</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Presupuesto Estimado</label>
-                <select [(ngModel)]="presupuestoEstimado" name="presupuestoEstimado" class="input-field bg-[#0c0c14] text-white">
-                  <option>$600.000 - $1.200.000 COP (Piloto Sencillo)</option>
-                  <option>$1.200.000 - $2.500.000 COP (Intermedio)</option>
-                  <option>Por definir según levantamiento</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Campos Específicos para Educación -->
-            <div *ngIf="contactType === 'edu'" class="space-y-5">
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <form (ngSubmit)="onSubmit()" class="space-y-6">
+              <!-- Datos Generales -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Nivel Académico</label>
-                  <select [(ngModel)]="nivelEdu" name="nivelEdu" class="input-field bg-[#0c0c14] text-white">
-                    <option>Primaria (Refuerzo / Tareas)</option>
-                    <option>Bachillerato (Secundaria)</option>
-                    <option>Universidad (Superior)</option>
+                  <label
+                    class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Nombre
+                    Completo *</label>
+                  <input type="text" [(ngModel)]="nombre" name="nombre" required class="input-field-light"
+                    placeholder="Ej. Juan Pérez">
+                </div>
+
+                <div *ngIf="contactType === 'tech'">
+                  <label
+                    class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Nombre del
+                    Negocio o Comercio</label>
+                  <input type="text" [(ngModel)]="empresa" name="empresa" class="input-field-light"
+                    placeholder="Ej. Repuestos La 17">
+                </div>
+
+                <div *ngIf="contactType === 'edu'">
+                  <label
+                    class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Nombre del
+                    Acudiente (si es menor)</label>
+                  <input type="text" [(ngModel)]="empresa" name="empresa" class="input-field-light"
+                    placeholder="Ej. Madre / Padre de familia">
+                </div>
+
+                <div *ngIf="contactType === 'tutor'">
+                  <label
+                    class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Carrera
+                    Universitaria o Profesión *</label>
+                  <input type="text" [(ngModel)]="carreraOProfesion" name="carreraOProfesion" required
+                    class="input-field-light" placeholder="Ej. Ing. de Sistemas / Lic. Matemáticas">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label
+                    class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Correo
+                    Electrónico *</label>
+                  <input type="email" [(ngModel)]="correo" name="correo" required class="input-field-light"
+                    placeholder="correo@ejemplo.com">
+                </div>
+
+                <div>
+                  <label
+                    class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Teléfono o
+                    WhatsApp *</label>
+                  <input type="tel" [(ngModel)]="telefono" name="telefono" required class="input-field-light"
+                    placeholder="+57 300 000 0000">
+                </div>
+              </div>
+
+              <!-- Campos Específicos para Tecnología -->
+              <div *ngIf="contactType === 'tech'" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Tipo
+                    de Necesidad</label>
+                  <select [(ngModel)]="necesidadTech" name="necesidadTech"
+                    class="input-field-light bg-white text-zinc-900">
+                    <option>Digitalización de registros en papel (con IA)</option>
+                    <option>Sistema básico de inventario, ventas y gastos</option>
+                    <option>Página o aplicación web a medida</option>
+                    <option>Automatización de reportes internos</option>
+                    <option>Asesoría tecnológica básica</option>
                   </select>
                 </div>
 
                 <div>
-                  <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Asignatura Principal</label>
-                  <input type="text" [(ngModel)]="asignatura" name="asignatura" class="input-field" placeholder="Ej. Cálculo / Matemáticas / Física">
-                </div>
-
-                <div>
-                  <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Modalidad Preferida</label>
-                  <select [(ngModel)]="modalidadEdu" name="modalidadEdu" class="input-field bg-[#0c0c14] text-white">
-                    <option>Virtual (Videollamada)</option>
-                    <option>Presencial (Pasto)</option>
-                    <option>Cualquiera de las dos</option>
+                  <label
+                    class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Presupuesto
+                    Estimado</label>
+                  <select [(ngModel)]="presupuestoEstimado" name="presupuestoEstimado"
+                    class="input-field-light bg-white text-zinc-900">
+                    <option>$200.000 - $1.200.000 COP (Piloto Sencillo)</option>
+                    <option>$1.200.000 - $2.500.000 COP (Intermedio)</option>
+                    <option>Por definir según levantamiento</option>
                   </select>
                 </div>
               </div>
-            </div>
 
-            <!-- Campos Específicos para Tutor -->
-            <div *ngIf="contactType === 'tutor'" class="space-y-5">
-              <div>
-                <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Asignaturas que puedes orientar</label>
-                <input type="text" [(ngModel)]="asignaturasTutor" name="asignaturasTutor" class="input-field" placeholder="Ej. Matemáticas bachillerato, Cálculo 1, Física mecánica, Programación en Python">
+              <!-- Campos Específicos para Educación -->
+              <div *ngIf="contactType === 'edu'" class="space-y-5">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                  <div>
+                    <label
+                      class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Nivel
+                      Académico</label>
+                    <select [(ngModel)]="nivelEdu" name="nivelEdu" class="input-field-light bg-white text-zinc-900">
+                      <option>Primaria (Refuerzo / Tareas)</option>
+                      <option>Bachillerato (Secundaria)</option>
+                      <option>Universidad (Superior)</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Asignatura
+                      Principal</label>
+                    <input type="text" [(ngModel)]="asignatura" name="asignatura" class="input-field-light"
+                      placeholder="Ej. Cálculo / Matemáticas / Física">
+                  </div>
+
+                  <div>
+                    <label
+                      class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Modalidad
+                      Preferida</label>
+                    <select [(ngModel)]="modalidadEdu" name="modalidadEdu"
+                      class="input-field-light bg-white text-zinc-900">
+                      <option>Virtual (Videollamada)</option>
+                      <option>Presencial (Pasto)</option>
+                      <option>Cualquiera de las dos</option>
+                    </select>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <!-- Mensaje Libre -->
-            <div>
-              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-2">Descripción o Detalles Adicionales</label>
-              <textarea 
-                [(ngModel)]="mensaje" 
-                name="mensaje" 
-                class="input-field min-h-[120px] resize-y" 
-                rows="4" 
-                placeholder="Cuéntanos más sobre el problema que deseas solucionar, los horarios de tu preferencia o cualquier duda..."
-              ></textarea>
-            </div>
-            
-            <button type="submit" class="button-primary w-full text-sm py-4">
-              <span *ngIf="contactType === 'tech'">Enviar Solicitud de Diagnóstico Tecnológico</span>
-              <span *ngIf="contactType === 'edu'">Solicitar Asignación de Tutor</span>
-              <span *ngIf="contactType === 'tutor'">Postular Hoja de Vida para la Red</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Columna Información de Contacto Directo -->
-      <div class="lg:col-span-5 flex flex-col gap-8">
-        <!-- Tarjeta de Agendamiento y Canales -->
-        <div class="glass-panel p-8 sm:p-10 ring-1 ring-quantum/30 shadow-[0_0_35px_-10px_rgba(0,229,255,0.2)]">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="font-mono text-xl font-bold text-quantum/60">02</span>
-            <h3 class="text-xl font-bold text-white font-display">Canales Directos</h3>
-          </div>
-          <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-            Comunícate directamente con los socios fundadores de Tensor por cualquiera de nuestros medios oficiales:
-          </p>
-          
-          <div class="space-y-4 text-xs font-mono">
-            <div class="rounded-xl border border-white/5 bg-white/[0.02] p-4 flex items-center justify-between">
-              <div>
-                <span class="text-zinc-500 uppercase block text-[10px]">WhatsApp Directo</span>
-                <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="text-white hover:text-quantum font-bold text-sm">
-                  +57 (300) 000-0000
-                </a>
+              <!-- Campos Específicos para Tutor -->
+              <div *ngIf="contactType === 'tutor'" class="space-y-5">
+                <div>
+                  <label
+                    class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Asignaturas
+                    que puedes orientar</label>
+                  <input type="text" [(ngModel)]="asignaturasTutor" name="asignaturasTutor" class="input-field-light"
+                    placeholder="Ej. Matemáticas bachillerato, Cálculo 1, Física mecánica, Programación en Python">
+                </div>
               </div>
-              <span class="text-emerald-400 text-lg">💬</span>
-            </div>
 
-            <div class="rounded-xl border border-white/5 bg-white/[0.02] p-4 flex items-center justify-between">
+              <!-- Mensaje Libre -->
               <div>
-                <span class="text-zinc-500 uppercase block text-[10px]">Correo Electrónico</span>
-                <a href="mailto:contacto@tensor.dev" class="text-white hover:text-quantum font-bold text-sm">
-                  contacto&#64;tensor.dev
-                </a>
+                <label
+                  class="block text-xs font-mono uppercase tracking-wider text-zinc-700 font-semibold mb-2">Descripción
+                  o Detalles Adicionales</label>
+                <textarea [(ngModel)]="mensaje" name="mensaje" class="input-field-light min-h-[120px] resize-y" rows="4"
+                  placeholder="Cuéntanos más sobre el problema que deseas solucionar, los horarios de tu preferencia o cualquier duda..."></textarea>
               </div>
-              <span class="text-quantum text-lg">✉️</span>
-            </div>
 
-            <div class="rounded-xl border border-white/5 bg-white/[0.02] p-4 flex items-center justify-between">
-              <div>
-                <span class="text-zinc-500 uppercase block text-[10px]">Sede de Operaciones</span>
-                <span class="text-white font-bold text-sm">
-                  San Juan de Pasto, Nariño
-                </span>
-                <p class="text-[10px] text-zinc-500 font-sans mt-0.5">Atención presencial en la ciudad y virtual a nivel nacional</p>
-              </div>
-              <span class="text-lg">📍</span>
-            </div>
+              <button type="submit" class="button-blue w-full text-sm py-4">
+                <span *ngIf="contactType === 'tech'">Enviar Solicitud de Diagnóstico Tecnológico</span>
+                <span *ngIf="contactType === 'edu'">Solicitar Asignación de Tutor</span>
+                <span *ngIf="contactType === 'tutor'">Postular Hoja de Vida para la Red</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
+            </form>
           </div>
         </div>
 
-        <!-- Protocolos de Seguridad y Protección de Datos -->
-        <div class="glass-panel p-7 border-emerald-500/20 bg-emerald-950/10 space-y-3">
-          <div class="flex items-center gap-2 text-emerald-400 font-mono text-xs uppercase font-bold">
-            <span>🛡️</span>
-            <span>Garantías de Protección & Privacidad</span>
+        <!-- Columna Información de Contacto Directo -->
+        <div class="lg:col-span-5 flex flex-col gap-8">
+          <!-- Tarjeta de Agendamiento y Canales Directos -->
+          <div class="card-white p-8 sm:p-10 border-blue-200 ring-1 ring-[#2F6BFF]/20 shadow-md">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-mono text-xl font-bold text-[#2F6BFF]">02</span>
+              <h3 class="text-xl font-bold text-zinc-950 font-display">Canales Directos</h3>
+            </div>
+            <p class="text-zinc-600 text-sm leading-relaxed mb-6">
+              Comunícate directamente con los socios fundadores de Tensor por cualquiera de nuestros medios oficiales:
+            </p>
+
+            <div class="space-y-4 text-xs font-mono">
+              <div class="rounded-xl border border-zinc-200 bg-zinc-50 p-4 flex items-center justify-between">
+                <div>
+                  <span class="text-zinc-500 uppercase block text-[10px]">WhatsApp Directo</span>
+                  <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer"
+                    class="text-zinc-950 hover:text-[#2F6BFF] font-bold text-sm">
+                    +57 (300) 000-0000
+                  </a>
+                </div>
+                <span class="text-emerald-500 text-lg">💬</span>
+              </div>
+
+              <div class="rounded-xl border border-zinc-200 bg-zinc-50 p-4 flex items-center justify-between">
+                <div>
+                  <span class="text-zinc-500 uppercase block text-[10px]">Correo Electrónico</span>
+                  <a href="mailto:contacto@tensor.dev" class="text-zinc-950 hover:text-[#2F6BFF] font-bold text-sm">
+                    contacto&#64;tensor.dev
+                  </a>
+                </div>
+                <span class="text-[#2F6BFF] text-lg">✉️</span>
+              </div>
+
+              <div class="rounded-xl border border-zinc-200 bg-zinc-50 p-4 flex items-center justify-between">
+                <div>
+                  <span class="text-zinc-500 uppercase block text-[10px]">Sede de Operaciones</span>
+                  <span class="text-zinc-950 font-bold text-sm">
+                    San Juan de Pasto, Nariño
+                  </span>
+                  <p class="text-[10px] text-zinc-500 font-sans mt-0.5">Atención presencial en la ciudad y virtual a
+                    nivel nacional</p>
+                </div>
+                <span class="text-lg">📍</span>
+              </div>
+            </div>
           </div>
-          <p class="text-xs text-zinc-300 leading-relaxed font-sans">
-            En Tensor aplicamos los principios de confidencialidad y responsabilidad estipulados en nuestra definición fundacional:
-          </p>
-          <ul class="text-xs text-zinc-400 space-y-1.5 font-sans">
-            <li>• <strong>Información Empresarial:</strong> Resguardo estricto de notas contables, ventas y datos internos de cada negocio.</li>
-            <li>• <strong>Protección de Menores:</strong> Protocolos de autorización expresa y comunicación obligatoria con acudientes en el servicio de tutorías.</li>
-            <li>• <strong>Transparencia:</strong> Tarifas claras y acordadas antes de iniciar cualquier proyecto o sesión.</li>
-          </ul>
+
+          <!-- Protocolos de Seguridad y Protección de Datos -->
+          <div class="card-white p-7 border-blue-200 bg-blue-50/40 space-y-3">
+            <div class="flex items-center gap-2 text-[#1D4ED8] font-mono text-xs uppercase font-bold">
+              <span>🛡️</span>
+              <span>Garantías de Protección & Privacidad</span>
+            </div>
+            <p class="text-xs text-zinc-700 leading-relaxed font-sans">
+              En Tensor aplicamos los principios de confidencialidad y responsabilidad estipulados en nuestra definición
+              fundacional:
+            </p>
+            <ul class="text-xs text-zinc-600 space-y-1.5 font-sans">
+              <li>• <strong>Información Empresarial:</strong> Resguardo estricto de notas contables, ventas y datos
+                internos de cada negocio.</li>
+              <li>• <strong>Protección de Menores:</strong> Protocolos de autorización expresa y comunicación
+                obligatoria con acudientes en el servicio de tutorías.</li>
+              <li>• <strong>Transparencia:</strong> Tarifas claras y acordadas antes de iniciar cualquier proyecto o
+                sesión.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-
-  </div>
+  </section>
 </div>

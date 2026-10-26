@@ -1,302 +1,344 @@
-<div class="pt-28 sm:pt-36 pb-24 relative overflow-hidden">
+<div class="pt-28 sm:pt-36 pb-0 relative overflow-hidden bg-[#07070b]">
   <!-- Ambient background glow -->
-  <div class="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-quantum/[0.08] blur-[150px]"></div>
+  <div
+    class="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#2F6BFF]/[0.12] blur-[150px]">
+  </div>
 
-  <div class="investor-container relative z-10">
+  <div class="investor-container relative z-10 pb-16">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <p class="eyebrow">Catálogo de Soluciones</p>
       <h1 class="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.035em] text-white">
-        Servicios en <span class="bg-gradient-to-r from-white via-cyan-100 to-quantum bg-clip-text text-transparent">Tecnología & Educación</span>
+        Servicios en <span
+          class="bg-gradient-to-r from-white via-blue-100 to-[#2F6BFF] bg-clip-text text-transparent">Tecnología &
+          Educación</span>
       </h1>
-      <p class="mt-6 text-base sm:text-lg text-zinc-400 leading-relaxed">
-        Estructuramos nuestras capacidades en dos áreas complementarias: desarrollo y automatización de procesos para negocios, y una red de tutorías personalizadas para primaria, bachillerato y universidad.
+      <p class="mt-6 text-base sm:text-lg text-zinc-300 leading-relaxed">
+        Estructuramos nuestras capacidades en dos áreas complementarias: desarrollo y automatización de procesos para
+        negocios, y una red de tutorías personalizadas para primaria, bachillerato y universidad.
       </p>
 
       <!-- Pill Tab Switcher -->
-      <div class="mt-10 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] p-1.5 backdrop-blur-xl shadow-lg">
-        <button
-          type="button"
-          (click)="setTab('all')"
-          [ngClass]="activeTab === 'all' ? 'bg-white text-void font-semibold shadow-md' : 'text-zinc-400 hover:text-white'"
-          class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200"
-        >
-          Todas las Divisiones
-        </button>
-        <button
-          type="button"
-          (click)="setTab('tech')"
-          [ngClass]="activeTab === 'tech' ? 'bg-white text-void font-semibold shadow-md' : 'text-zinc-400 hover:text-white'"
-          class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200"
-        >
+      <div
+        class="mt-10 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] p-1.5 backdrop-blur-xl shadow-lg">
+        <button type="button" (click)="setTab('tech')"
+          [ngClass]="activeTab === 'tech' ? 'bg-[#2F6BFF] text-white font-bold shadow-md' : 'text-zinc-400 hover:text-white'"
+          class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200">
           💻 División Tecnología
         </button>
-        <button
-          type="button"
-          (click)="setTab('edu')"
-          [ngClass]="activeTab === 'edu' ? 'bg-white text-void font-semibold shadow-md' : 'text-zinc-400 hover:text-white'"
-          class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200"
-        >
+        <button type="button" (click)="setTab('edu')"
+          [ngClass]="activeTab === 'edu' ? 'bg-[#2F6BFF] text-white font-bold shadow-md' : 'text-zinc-400 hover:text-white'"
+          class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200">
           🎓 División Educación
         </button>
       </div>
     </div>
+  </div>
 
-    <!-- SECCIÓN: DIVISIÓN DE TECNOLOGÍA -->
-    <div *ngIf="activeTab === 'all' || activeTab === 'tech'" class="mb-28">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 border-b border-white/[0.08] pb-6">
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN EN COLOR BLANCO: DIVISIÓN DE TECNOLOGÍA (Estilo Lab10.ai)          -->
+  <!-- ========================================================================= -->
+  <section *ngIf="activeTab === 'tech'" class="section-white py-24 md:py-32">
+    <div class="investor-container">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14 border-b border-zinc-200 pb-6">
         <div>
-          <div class="inline-flex items-center gap-2 font-mono text-xs text-quantum uppercase tracking-widest font-semibold mb-2">
+          <div class="badge-light-blue mb-2">
             <span>01</span> · <span>Línea Empresarial</span>
           </div>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white font-display">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-950 font-display">
             División de Tecnología & Software
           </h2>
         </div>
-        <p class="text-xs sm:text-sm text-zinc-400 max-w-md font-sans">
-          Orientada a pequeños negocios, comercios y profesionales independientes que necesitan ordenar información, reducir tareas manuales y digitalizar su control interno.
+        <p class="text-xs sm:text-sm text-zinc-600 max-w-md font-sans">
+          Orientada a pequeños negocios, comercios y profesionales independientes que necesitan ordenar información,
+          reducir tareas manuales y digitalizar su control interno.
         </p>
       </div>
 
-      <!-- 4 Pilares Tecnológicos -->
+      <!-- 4 Pilares Tecnológicos en Cards Blancas -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         <!-- Servicio 1: Desarrollo de Software -->
-        <div class="glass-panel p-7 flex flex-col justify-between hover:border-quantum/40 transition-all">
+        <div class="card-white p-7 flex flex-col justify-between hover:border-[#2F6BFF] transition-all">
           <div>
-            <div class="h-10 w-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center text-quantum font-mono text-xs font-bold mb-5">
+            <div
+              class="h-10 w-10 rounded-xl border border-zinc-200 bg-zinc-50 flex items-center justify-center text-[#2F6BFF] font-mono text-xs font-bold mb-5">
               01
             </div>
-            <h3 class="text-xl font-bold text-white mb-2 font-display">Desarrollo de Software</h3>
-            <p class="text-xs text-zinc-400 leading-relaxed mb-6">
+            <h3 class="text-xl font-bold text-zinc-950 mb-2 font-display">Desarrollo de Software</h3>
+            <p class="text-xs text-zinc-600 leading-relaxed mb-6">
               Páginas y herramientas web adaptadas a las necesidades reales de cada negocio.
             </p>
-            <ul class="text-xs text-zinc-300 space-y-2 font-sans border-t border-white/5 pt-4">
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Páginas y aplicaciones web</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Herramientas internas de gestión</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Módulos de inventario y ventas</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Registro de gastos y cuentas por cobrar</li>
+            <ul class="text-xs text-zinc-700 space-y-2 font-sans border-t border-zinc-100 pt-4">
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span> Páginas y
+                aplicaciones web</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
+                Herramientas internas de gestión</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span> Módulos de
+                inventario y ventas</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span> Registro
+                de gastos y cuentas por cobrar</li>
             </ul>
           </div>
-          <div class="mt-6 pt-3 border-t border-white/5 text-[11px] font-mono text-zinc-500">
+          <div class="mt-6 pt-3 border-t border-zinc-100 text-[11px] font-mono text-zinc-400">
             A la medida del negocio
           </div>
         </div>
 
         <!-- Servicio 2: Automatización de Procesos -->
-        <div class="glass-panel p-7 flex flex-col justify-between hover:border-quantum/40 transition-all ring-1 ring-quantum/30 shadow-[0_0_30px_-10px_rgba(0,229,255,0.2)]">
+        <div
+          class="card-white p-7 flex flex-col justify-between hover:border-[#2F6BFF] transition-all border-blue-200 shadow-md">
           <div>
-            <div class="h-10 w-10 rounded-xl border border-quantum/30 bg-quantum/10 flex items-center justify-center text-quantum font-mono text-xs font-bold mb-5">
+            <div
+              class="h-10 w-10 rounded-xl border border-blue-200 bg-blue-50 flex items-center justify-center text-[#1D4ED8] font-mono text-xs font-bold mb-5">
               02
             </div>
-            <h3 class="text-xl font-bold text-white mb-2 font-display">Automatización de Procesos</h3>
-            <p class="text-xs text-zinc-400 leading-relaxed mb-6">
+            <h3 class="text-xl font-bold text-zinc-950 mb-2 font-display">Automatización de Procesos</h3>
+            <p class="text-xs text-zinc-600 leading-relaxed mb-6">
               Transformación de tareas manuales repetitivas en flujos digitales ordenados.
             </p>
-            <ul class="text-xs text-zinc-300 space-y-2 font-sans border-t border-white/5 pt-4">
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Digitalización de registros en papel</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Automatización de tareas rutinarias</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Organización y saneamiento de datos</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Generación automática de reportes</li>
+            <ul class="text-xs text-zinc-700 space-y-2 font-sans border-t border-zinc-100 pt-4">
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
+                Digitalización de registros en papel</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
+                Automatización de tareas rutinarias</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
+                Organización y procesamiento de datos</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span> Generación
+                automática de reportes</li>
             </ul>
           </div>
-          <div class="mt-6 pt-3 border-t border-white/5 text-[11px] font-mono text-quantum font-semibold">
+          <div class="mt-6 pt-3 border-t border-zinc-100 text-[11px] font-mono text-[#1D4ED8] font-semibold">
             Caso insignia en producción
           </div>
         </div>
 
         <!-- Servicio 3: Análisis de Datos e IA -->
-        <div class="glass-panel p-7 flex flex-col justify-between hover:border-quantum/40 transition-all">
+        <div class="card-white p-7 flex flex-col justify-between hover:border-[#2F6BFF] transition-all">
           <div>
-            <div class="h-10 w-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center text-quantum font-mono text-xs font-bold mb-5">
+            <div
+              class="h-10 w-10 rounded-xl border border-zinc-200 bg-zinc-50 flex items-center justify-center text-[#2F6BFF] font-mono text-xs font-bold mb-5">
               03
             </div>
-            <h3 class="text-xl font-bold text-white mb-2 font-display">Análisis de Datos & IA</h3>
-            <p class="text-xs text-zinc-400 leading-relaxed mb-6">
+            <h3 class="text-xl font-bold text-zinc-950 mb-2 font-display">Análisis de Datos & IA</h3>
+            <p class="text-xs text-zinc-600 leading-relaxed mb-6">
               Extracción asistida con IA supervisada y reportes de apoyo gerencial.
             </p>
-            <ul class="text-xs text-zinc-300 space-y-2 font-sans border-t border-white/5 pt-4">
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Procesamiento de notas y comprobantes</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Extracción de texto y cifras con IA</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Resúmenes periódicos de ingresos y gastos</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Revisión humana y trazabilidad de datos</li>
+            <ul class="text-xs text-zinc-700 space-y-2 font-sans border-t border-zinc-100 pt-4">
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
+                Procesamiento de notas y comprobantes</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span> Extracción
+                de texto y cifras con IA</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span> Resúmenes
+                periódicos de ingresos y gastos</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span> Revisión
+                humana y trazabilidad de datos</li>
             </ul>
           </div>
-          <div class="mt-6 pt-3 border-t border-white/5 text-[11px] font-mono text-zinc-500">
+          <div class="mt-6 pt-3 border-t border-zinc-100 text-[11px] font-mono text-zinc-400">
             Inteligencia con control humano
           </div>
         </div>
 
         <!-- Servicio 4: Asesoría Tecnológica Básica -->
-        <div class="glass-panel p-7 flex flex-col justify-between hover:border-quantum/40 transition-all">
+        <div class="card-white p-7 flex flex-col justify-between hover:border-[#2F6BFF] transition-all">
           <div>
-            <div class="h-10 w-10 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center text-quantum font-mono text-xs font-bold mb-5">
+            <div
+              class="h-10 w-10 rounded-xl border border-zinc-200 bg-zinc-50 flex items-center justify-center text-[#2F6BFF] font-mono text-xs font-bold mb-5">
               04
             </div>
-            <h3 class="text-xl font-bold text-white mb-2 font-display">Asesoría Tecnológica</h3>
-            <p class="text-xs text-zinc-400 leading-relaxed mb-6">
+            <h3 class="text-xl font-bold text-zinc-950 mb-2 font-display">Asesoría Tecnológica</h3>
+            <p class="text-xs text-zinc-600 leading-relaxed mb-6">
               Diagnóstico sincero y aterrizado al presupuesto real de tu organización.
             </p>
-            <ul class="text-xs text-zinc-300 space-y-2 font-sans border-t border-white/5 pt-4">
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Identificación de procesos a mejorar</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Evaluación de herramientas apropiadas</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Propuestas según tiempo y presupuesto</li>
-              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-quantum"></span> Capacitación y acompañamiento básico</li>
+            <ul class="text-xs text-zinc-700 space-y-2 font-sans border-t border-zinc-100 pt-4">
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
+                Identificación de procesos a mejorar</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span> Evaluación
+                de herramientas apropiadas</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span> Propuestas
+                según tiempo y presupuesto</li>
+              <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
+                Capacitación y acompañamiento básico</li>
             </ul>
           </div>
-          <div class="mt-6 pt-3 border-t border-white/5 text-[11px] font-mono text-zinc-500">
+          <div class="mt-6 pt-3 border-t border-zinc-100 text-[11px] font-mono text-zinc-400">
             Soluciones viables y sencillas
           </div>
         </div>
       </div>
 
       <!-- Protocolo y Precios de Tecnología -->
-      <div class="glass-panel p-8 sm:p-10 mb-8 border-white/10">
+      <div class="card-white p-8 sm:p-10 border-zinc-200 bg-zinc-50/70">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-8 space-y-3">
-            <span class="eyebrow">Validación & Condiciones Comerciales</span>
-            <h3 class="text-2xl font-bold text-white font-display">
+            <span class="badge-light-blue">Validación & Condiciones Comerciales</span>
+            <h3 class="text-2xl font-bold text-zinc-950 font-display">
               Proyectos Piloto: Esquema 50% / 50%
             </h3>
-            <p class="text-sm text-zinc-300 leading-relaxed font-sans">
-              Para proyectos pequeños de automatización o digitalización, el rango de cotización inicial oscila entre <strong class="text-white">$600.000 y $1.200.000 COP</strong> (valor de referencia de $900.000 COP para pilotos sencillos). Se propone un pago del 50% al iniciar y el saldo contra entrega y aceptación. Adicionalmente, puede evaluarse un plan voluntario de soporte y mantenimiento mensual entre <strong class="text-white">$120.000 y $250.000 COP/mes</strong>.
+            <p class="text-sm text-zinc-600 leading-relaxed font-sans">
+              Para proyectos pequeños de automatización o digitalización, el rango de cotización inicial oscila entre
+              <strong class="text-zinc-950 font-semibold">$200.000 y $1.200.000 COP</strong> (valor de referencia de
+              $900.000 COP para pilotos sencillos). Se propone un pago del 50% al iniciar y el saldo contra entrega y
+              aceptación. Adicionalmente, puede evaluarse un plan voluntario de soporte y mantenimiento mensual entre
+              <strong class="text-zinc-950 font-semibold">$40.000 y $180.000 COP/mes</strong>.
             </p>
-            <p class="text-xs text-zinc-400 font-mono">
-              Nota de transparencia: Se presenta como solución de apoyo administrativo y control interno, delimitando tareas y evitando falsas promesas contables o tributarias.
+            <p class="text-xs text-zinc-500 font-mono">
+              Nota de transparencia: Se presenta como solución de apoyo administrativo y control interno, delimitando
+              tareas y evitando falsas promesas contables o tributarias.
             </p>
           </div>
           <div class="lg:col-span-4 flex flex-col justify-center items-start lg:items-end gap-3">
-            <a routerLink="/contacto" class="button-primary text-xs w-full sm:w-auto text-center">
+            <a routerLink="/contacto" class="button-blue text-xs w-full sm:w-auto text-center">
               Solicitar Cotización de Software
             </a>
-            <a routerLink="/labs" class="button-ghost text-xs w-full sm:w-auto text-center">
+            <a routerLink="/labs" class="button-dark text-xs w-full sm:w-auto text-center">
               Ver Demo en Simulador →
             </a>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- SECCIÓN: DIVISIÓN DE EDUCACIÓN -->
-    <div *ngIf="activeTab === 'all' || activeTab === 'edu'" class="mb-24">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 border-b border-white/[0.08] pb-6">
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN EN COLOR NEGRO / DEEP SLATE: DIVISIÓN DE EDUCACIÓN                -->
+  <!-- ========================================================================= -->
+  <section *ngIf="activeTab === 'edu'" class="relative bg-[#07070e] text-white py-24 md:py-32">
+    <div class="investor-container">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14 border-b border-white/[0.08] pb-6">
         <div>
-          <div class="inline-flex items-center gap-2 font-mono text-xs text-quantum uppercase tracking-widest font-semibold mb-2">
+          <div
+            class="inline-flex items-center gap-2 font-mono text-xs text-[#5C98FF] uppercase tracking-widest font-semibold mb-2">
             <span>02</span> · <span>Línea Formativa</span>
           </div>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white font-display">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white font-display">
             División de Educación & Red de Tutores
           </h2>
         </div>
         <p class="text-xs sm:text-sm text-zinc-400 max-w-md font-sans">
-          Conectamos a estudiantes que necesitan apoyo académico con tutores competentes y verificados para tres segmentos educativos.
+          Conectamos a estudiantes que necesitan apoyo académico con tutores competentes y verificados para tres
+          segmentos educativos.
         </p>
       </div>
 
-      <!-- 3 Segmentos Educativos -->
+      <!-- 3 Segmentos Educativos en Glass Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         <!-- Segmento 1: Primaria -->
-        <div class="glass-panel p-8 sm:p-10 flex flex-col justify-between hover:border-quantum/40 transition-all">
+        <div class="glass-panel p-8 sm:p-10 flex flex-col justify-between hover:border-[#2F6BFF]/40 transition-all">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-2xl font-bold text-quantum">01</span>
-              <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono uppercase text-zinc-300">Nivel Básico</span>
+              <span class="font-mono text-2xl font-bold text-[#5C98FF]">01</span>
+              <span
+                class="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono uppercase text-zinc-300">Nivel
+                Básico</span>
             </div>
             <h3 class="text-2xl font-bold text-white mb-3 font-display">Primaria</h3>
             <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
-              Acompañamiento paciente y estructurado para construir hábitos sólidos de estudio y afianzar las bases del aprendizaje escolar.
+              Acompañamiento paciente y estructurado para construir hábitos sólidos de estudio y afianzar las bases del
+              aprendizaje escolar.
             </p>
             <div class="border-t border-white/[0.06] pt-5 space-y-2.5 text-xs text-zinc-300 font-sans">
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Refuerzo escolar integral</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Orientación y acompañamiento en tareas</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Preparación para evaluaciones periódicas</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Fortalecimiento de lectura, escritura y aritmética</span>
               </div>
             </div>
           </div>
-          <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[11px] text-zinc-500">
+          <div
+            class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[11px] text-zinc-500">
             <span>Modalidad:</span>
             <span class="text-white">Virtual o Presencial</span>
           </div>
         </div>
 
         <!-- Segmento 2: Bachillerato -->
-        <div class="glass-panel p-8 sm:p-10 flex flex-col justify-between hover:border-quantum/40 transition-all ring-1 ring-quantum/30 shadow-[0_0_35px_-10px_rgba(0,229,255,0.2)]">
+        <div
+          class="glass-panel p-8 sm:p-10 flex flex-col justify-between hover:border-[#2F6BFF]/40 transition-all ring-1 ring-[#2F6BFF]/30 shadow-[0_0_35px_-10px_rgba(47,107,255,0.25)]">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-2xl font-bold text-quantum">02</span>
-              <span class="rounded-full border border-quantum/30 bg-quantum/10 px-2.5 py-0.5 text-[10px] font-mono uppercase text-quantum">Nivel Medio</span>
+              <span class="font-mono text-2xl font-bold text-[#5C98FF]">02</span>
+              <span
+                class="rounded-full border border-[#2F6BFF]/40 bg-[#2F6BFF]/10 px-2.5 py-0.5 text-[10px] font-mono uppercase text-[#5C98FF]">Nivel
+                Medio</span>
             </div>
             <h3 class="text-2xl font-bold text-white mb-3 font-display">Bachillerato</h3>
             <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
-              Tutorías especializadas por asignatura para superar dificultades, nivelar conocimientos y preparar exámenes con confianza.
+              Tutorías especializadas por asignatura para superar dificultades, nivelar conocimientos y preparar
+              exámenes con confianza.
             </p>
             <div class="border-t border-white/[0.06] pt-5 space-y-2.5 text-xs text-zinc-300 font-sans">
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Matemáticas: Álgebra, trigonometría, geometría</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Ciencias naturales: Física elemental y química</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Idiomas (inglés) y comprensión lectora</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Preparación para evaluaciones y pruebas Saber</span>
               </div>
             </div>
           </div>
-          <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[11px] text-zinc-500">
+          <div
+            class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[11px] text-zinc-500">
             <span>Modalidad:</span>
             <span class="text-white">Virtual o Presencial</span>
           </div>
         </div>
 
         <!-- Segmento 3: Universidad -->
-        <div class="glass-panel p-8 sm:p-10 flex flex-col justify-between hover:border-quantum/40 transition-all">
+        <div class="glass-panel p-8 sm:p-10 flex flex-col justify-between hover:border-[#2F6BFF]/40 transition-all">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="font-mono text-2xl font-bold text-quantum">03</span>
-              <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono uppercase text-zinc-300">Nivel Superior</span>
+              <span class="font-mono text-2xl font-bold text-[#5C98FF]">03</span>
+              <span
+                class="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono uppercase text-zinc-300">Nivel
+                Superior</span>
             </div>
             <h3 class="text-2xl font-bold text-white mb-3 font-display">Universidad</h3>
             <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-6">
-              Acompañamiento de alto nivel impartido por tutores competentes en carreras técnicas, de ingeniería o ciencias exactas.
+              Acompañamiento de alto nivel impartido por tutores competentes en carreras técnicas, de ingeniería o
+              ciencias exactas.
             </p>
             <div class="border-t border-white/[0.06] pt-5 space-y-2.5 text-xs text-zinc-300 font-sans">
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Cálculo diferencial, integral y multivariable</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Álgebra lineal y ecuaciones diferenciales</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Física mecánica y electromagnetismo</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="h-1.5 w-1.5 rounded-full bg-quantum"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-[#2F6BFF]"></span>
                 <span>Estadística, probabilidad y programación</span>
               </div>
             </div>
           </div>
-          <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[11px] text-zinc-500">
+          <div
+            class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[11px] text-zinc-500">
             <span>Modalidad:</span>
             <span class="text-white">Virtual o Presencial</span>
           </div>
@@ -307,46 +349,56 @@
       <div class="glass-panel p-8 sm:p-10 border-white/10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5">
-            <span class="text-quantum font-mono text-sm font-bold block mb-2">01. Verificación Previa</span>
+            <span class="text-[#5C98FF] font-mono text-sm font-bold block mb-2">01. Verificación Previa</span>
             <p class="text-xs text-zinc-400 leading-relaxed">
-              Verificamos el dominio y la capacidad pedagógica de los tutores antes de asignarlos. No ofrecemos asignaturas que no podamos garantizar.
+              Verificamos el dominio y la capacidad pedagógica de los tutores antes de asignarlos. No ofrecemos
+              asignaturas que no podamos garantizar.
             </p>
           </div>
           <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5">
-            <span class="text-quantum font-mono text-sm font-bold block mb-2">02. Protección & Ética</span>
+            <span class="text-[#5C98FF] font-mono text-sm font-bold block mb-2">02. Protección & Ética</span>
             <p class="text-xs text-zinc-400 leading-relaxed">
-              En el caso de menores de edad, contamos con protocolos de autorización familiar, canales claros de comunicación y protección de datos.
+              En el caso de menores de edad, contamos con protocolos de autorización familiar, canales claros de
+              comunicación y protección de datos.
             </p>
           </div>
           <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5">
-            <span class="text-quantum font-mono text-sm font-bold block mb-2">03. Seguimiento Directo</span>
+            <span class="text-[#5C98FF] font-mono text-sm font-bold block mb-2">03. Seguimiento Directo</span>
             <p class="text-xs text-zinc-400 leading-relaxed">
-              Evaluamos cada sesión con el estudiante y su familia para garantizar que el refuerzo cumpla con los objetivos académicos planteados.
+              Evaluamos cada sesión con el estudiante y su familia para garantizar que el refuerzo cumpla con los
+              objetivos académicos planteados.
             </p>
           </div>
         </div>
 
         <div class="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <strong class="text-white text-sm block">¿Eres estudiante universitario o docente y quieres ser tutor?</strong>
-            <p class="text-xs text-zinc-400">Únete a nuestra red de tutores con horarios flexibles y remuneración equitativa.</p>
+            <strong class="text-white text-sm block">¿Eres estudiante universitario o docente y quieres ser
+              tutor?</strong>
+            <p class="text-xs text-zinc-400">Únete a nuestra red de tutores con horarios flexibles y remuneración
+              equitativa.</p>
           </div>
-          <a routerLink="/contacto" class="button-primary text-xs shrink-0">
+          <a routerLink="/contacto" class="button-blue text-xs shrink-0">
             Postularme como Tutor
           </a>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Bottom CTA Card -->
-    <div class="glass-panel p-10 md:p-14 text-center max-w-4xl mx-auto">
-      <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4 font-display">
-        ¿Tienes un requerimiento específico o necesitas cotizar?
-      </h3>
-      <p class="text-zinc-400 mb-8 text-base max-w-xl mx-auto font-sans">
-        Conversemos para evaluar el alcance de tu proyecto de software o coordinar las sesiones de tutoría que necesitas.
-      </p>
-      <a routerLink="/contacto" class="button-primary">Solicitar Información o Cotización</a>
+  <!-- Bottom CTA Card (Lab10 Island Style) -->
+  <section class="py-24 bg-[#050508] text-white">
+    <div class="investor-container">
+      <div class="glass-panel p-10 md:p-14 text-center max-w-4xl mx-auto border-white/10">
+        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4 font-display">
+          ¿Tienes un requerimiento específico o necesitas cotizar?
+        </h3>
+        <p class="text-zinc-400 mb-8 text-base max-w-xl mx-auto font-sans">
+          Conversemos para evaluar el alcance de tu proyecto de software o coordinar las sesiones de tutoría que
+          necesitas.
+        </p>
+        <a routerLink="/contacto" class="button-blue">Solicitar Información o Cotización</a>
+      </div>
     </div>
-  </div>
+  </section>
 </div>

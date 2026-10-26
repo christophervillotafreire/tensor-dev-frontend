@@ -4,164 +4,455 @@
 
   <div class="investor-container relative z-10">
     <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-20">
-      <p class="eyebrow">Entorno Experimental & Telemetría</p>
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <p class="eyebrow">Demostraciones Interactivas</p>
       <h1 class="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.035em] text-white">
-        Tensor Labs: <span class="bg-gradient-to-r from-white via-cyan-100 to-quantum bg-clip-text text-transparent">Sandbox Interactivo</span>
+        Tensor Labs: <span class="bg-gradient-to-r from-white via-cyan-100 to-quantum bg-clip-text text-transparent">Simulador & Prototipos</span>
       </h1>
       <p class="mt-6 text-base sm:text-lg text-zinc-400 leading-relaxed">
-        Interactúa en tiempo real con nuestras canalizaciones de cálculo determinista y modelos semánticos en producción.
+        Experimenta directamente con las capacidades de Tensor: nuestro digitalizador inteligente de registros para comercios y el calculador de presupuestos transparente para software y tutorías.
       </p>
+
+      <!-- Tab Switcher -->
+      <div class="mt-10 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] p-1.5 backdrop-blur-xl shadow-lg">
+        <button
+          type="button"
+          (click)="currentTab = 'repuestos'"
+          [ngClass]="currentTab === 'repuestos' ? 'bg-white text-void font-semibold shadow-md' : 'text-zinc-400 hover:text-white'"
+          class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200"
+        >
+          📷 Demo 01: Digitalizador de Registros (IA)
+        </button>
+        <button
+          type="button"
+          (click)="currentTab = 'cotizador'"
+          [ngClass]="currentTab === 'cotizador' ? 'bg-white text-void font-semibold shadow-md' : 'text-zinc-400 hover:text-white'"
+          class="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200"
+        >
+          🧮 Demo 02: Calculador de Presupuestos
+        </button>
+      </div>
     </div>
 
-    <!-- Demo 1: Motor Determinista -->
-    <div class="mb-24">
-      <div class="mb-8">
+    <!-- DEMO 1: DIGITALIZADOR DE REGISTROS CON IA (CASO REAL REPUESTOS) -->
+    <div *ngIf="currentTab === 'repuestos'" class="mb-24">
+      <div class="mb-10 text-left max-w-3xl">
         <div class="inline-flex items-center gap-2 rounded-full border border-quantum/30 bg-quantum/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-quantum mb-3">
           <span class="h-1.5 w-1.5 rounded-full bg-quantum animate-pulse"></span>
-          Demo Interactiva 01
+          Proyecto Insignia Validado
         </div>
-        <h2 class="section-title text-2xl sm:text-3xl md:text-4xl text-left">Motor Determinista de Proyección de Flujo de Caja</h2>
-        <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-3xl">Simulación de saldo operativo a 90 días sin sesgo contable. Diseñado para control de liquidez interna y dinámica financiera.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white font-display">
+          Digitalización de Registros Diarios en Papel & Conciliación
+        </h2>
+        <p class="text-zinc-400 text-sm sm:text-base mt-2 leading-relaxed">
+          Inspirado en el sistema desarrollado para el negocio familiar de repuestos: la IA extrae los montos de anotaciones a mano, distingue pagos de Nequi y Bancolombia, y exige revisión humana antes de consolidar el reporte mensual.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- Input Form -->
-        <div class="glass-panel p-8 sm:p-10">
-          <div class="flex items-center justify-between border-b border-white/[0.06] pb-4 mb-6">
-            <h4 class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold">Parámetros Operativos</h4>
-            <span class="font-mono text-[11px] text-zinc-400">STATUS: READY</span>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Panel Izquierdo: Simulación de Registro Manuscrito -->
+        <div class="lg:col-span-5 glass-panel p-7 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-white/[0.06] pb-4 mb-6">
+              <span class="font-mono text-xs uppercase tracking-wider text-quantum font-semibold">1. Origen: Cuaderno de Ventas Físico</span>
+              <span class="font-mono text-[10px] text-zinc-500 uppercase">Foto Capturada</span>
+            </div>
+
+            <!-- Simulación visual de hoja de cuaderno -->
+            <div class="rounded-xl border border-amber-500/20 bg-[#14120e] p-5 font-mono text-xs text-amber-200/90 shadow-inner space-y-3 relative overflow-hidden">
+              <div class="border-b border-amber-500/20 pb-2 flex justify-between text-[11px] text-amber-400/80 font-bold">
+                <span>VENTAS DIARIAS - 24 DE OCTUBRE</span>
+                <span>REGISTRO MANUAL</span>
+              </div>
+              <div class="space-y-1.5 text-xs text-amber-100/85">
+                <p>• Juego pastillas freno delan ... $85.000 (efectivo)</p>
+                <p>• Filtro aceite sintético ... $38.000 (nequi)</p>
+                <p>• Amortiguador trasero der ... $240.000 (transf bancolombia)</p>
+                <p>• 4 bujias iridio NGK ... $110.000 (efectivo)</p>
+                <p>• Liquido de frenos DOT4 ... $25.000 (nequi)</p>
+              </div>
+              <div class="pt-3 border-t border-amber-500/20 text-[10px] text-amber-400/60 italic">
+                * Anotaciones a mano recopiladas en mostrador durante la jornada comercial.
+              </div>
+            </div>
+
+            <div class="mt-6 space-y-3">
+              <p class="text-xs text-zinc-400">
+                Presiona el botón para ejecutar la extracción asistida por inteligencia artificial:
+              </p>
+              
+              <button
+                type="button"
+                (click)="processPhotoAi()"
+                [disabled]="isProcessingAi"
+                class="button-primary w-full text-xs font-mono uppercase tracking-wider py-3.5 flex items-center justify-center gap-2"
+              >
+                <span *ngIf="!isProcessingAi && !aiProcessed">⚡ Procesar Foto con IA</span>
+                <span *ngIf="isProcessingAi">🔄 Procesando Imagen y Discriminando Canales...</span>
+                <span *ngIf="aiProcessed && !isProcessingAi">✓ Volver a Procesar Registro</span>
+              </button>
+            </div>
           </div>
-          
-          <div class="space-y-4">
-            <div>
-              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1.5">Saldo Inicial en Bancos (COP)</label>
-              <input type="text" class="input-field font-mono" value="$ 45.000.000" disabled>
-            </div>
-            <div>
-              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1.5">Cobranza Proyectada Mensual</label>
-              <input type="text" class="input-field font-mono" value="$ 28.500.000" disabled>
-            </div>
-            <div>
-              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1.5">Nómina y Costos Fijos</label>
-              <input type="text" class="input-field font-mono" value="$ 16.200.000" disabled>
-            </div>
-            <div>
-              <label class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1.5">Tasa de Morosidad Estimada</label>
-              <input type="text" class="input-field font-mono" value="12% (Desviación Típica)" disabled>
-            </div>
+
+          <div class="mt-6 pt-4 border-t border-white/5 text-[11px] font-mono text-zinc-500">
+            Algoritmo OCR con normalización semántica y detección de bancos
           </div>
-          
-          <button class="button-primary w-full mt-6 text-xs sm:text-sm">
-            <span>⚡ Ejecutar Simulación Determinista</span>
-          </button>
         </div>
 
-        <!-- Output Terminal (macOS Terminal) -->
-        <div class="glass-panel p-8 sm:p-10 flex flex-col font-mono justify-between overflow-hidden relative">
-          <!-- macOS Window Dots -->
-          <div class="flex items-center gap-2 border-b border-white/[0.06] pb-4 mb-5">
-            <div class="h-2.5 w-2.5 rounded-full bg-rose-500/80"></div>
-            <div class="h-2.5 w-2.5 rounded-full bg-amber-500/80"></div>
-            <div class="h-2.5 w-2.5 rounded-full bg-emerald-500/80"></div>
-            <span class="text-[11px] text-zinc-400 ml-2">quant://flow-engine.v2</span>
+        <!-- Panel Derecho: macOS Window con Datos Procesados & Revisión Humana -->
+        <div class="lg:col-span-7 glass-panel p-6 sm:p-8 flex flex-col justify-between overflow-hidden">
+          <div>
+            <!-- Window Header -->
+            <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 mb-6">
+              <div class="flex items-center gap-2">
+                <div class="h-3 w-3 rounded-full bg-rose-500/80"></div>
+                <div class="h-3 w-3 rounded-full bg-amber-500/80"></div>
+                <div class="h-3 w-3 rounded-full bg-emerald-500/80"></div>
+                <span class="text-[11px] font-mono text-zinc-400 ml-2">tensor://repuestos/modulo-conciliacion</span>
+              </div>
+              <span *ngIf="aiProcessed" class="font-mono text-[10px] text-emerald-400 flex items-center gap-1">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                EXTRACCIÓN EXITOSA
+              </span>
+            </div>
+
+            <!-- Tabla de datos si aún no se ha procesado -->
+            <div *ngIf="!aiProcessed" class="py-16 text-center text-zinc-500 font-mono text-xs">
+              <p class="text-2xl mb-2">📸</p>
+              <p>Presiona el botón "Procesar Foto con IA" en el panel izquierdo para observar la extracción en tiempo real.</p>
+            </div>
+
+            <!-- Tabla de datos procesados -->
+            <div *ngIf="aiProcessed" class="space-y-5">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left font-mono text-xs">
+                  <thead>
+                    <tr class="border-b border-white/10 text-zinc-400 text-[11px] uppercase">
+                      <th class="pb-2">Ítem / Repuesto</th>
+                      <th class="pb-2">Medio</th>
+                      <th class="pb-2 text-right">Monto (COP)</th>
+                      <th class="pb-2 text-center">Revisión</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-white/5 text-zinc-300">
+                    <tr *ngFor="let record of dailyRecords" class="hover:bg-white/[0.02]">
+                      <td class="py-2.5 font-sans">{{ record.item }}</td>
+                      <td class="py-2.5">
+                        <span 
+                          [ngClass]="{
+                            'text-zinc-300 bg-white/5': record.medio === 'Efectivo',
+                            'text-purple-400 bg-purple-950/40 border border-purple-500/30': record.medio === 'Nequi',
+                            'text-amber-300 bg-amber-950/40 border border-amber-500/30': record.medio === 'Bancolombia'
+                          }"
+                          class="px-2 py-0.5 rounded text-[10px]"
+                        >
+                          {{ record.medio }}
+                        </span>
+                      </td>
+                      <td class="py-2.5 text-right font-bold text-white">
+                        ${{ record.valor | number }}
+                      </td>
+                      <td class="py-2.5 text-center">
+                        <span *ngIf="record.validado" class="text-emerald-400 text-xs">✓ Validado</span>
+                        <span *ngIf="!record.validado" class="text-amber-400 text-xs">⚠️ Verificar</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Cajas de Resumen por Medio de Pago -->
+              <div class="grid grid-cols-3 gap-3 pt-3">
+                <div class="rounded-xl border border-white/5 bg-white/[0.02] p-3 text-center">
+                  <span class="text-[10px] font-mono text-zinc-400 uppercase block">Efectivo</span>
+                  <strong class="font-mono text-sm sm:text-base text-white">${{ totalEfectivo | number }}</strong>
+                </div>
+                <div class="rounded-xl border border-purple-500/20 bg-purple-950/20 p-3 text-center">
+                  <span class="text-[10px] font-mono text-purple-300 uppercase block">Nequi</span>
+                  <strong class="font-mono text-sm sm:text-base text-purple-300">${{ totalNequi | number }}</strong>
+                </div>
+                <div class="rounded-xl border border-amber-500/20 bg-amber-950/20 p-3 text-center">
+                  <span class="text-[10px] font-mono text-amber-300 uppercase block">Bancolombia</span>
+                  <strong class="font-mono text-sm sm:text-base text-amber-300">${{ totalBancolombia | number }}</strong>
+                </div>
+              </div>
+
+              <!-- Gran Total -->
+              <div class="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-4 flex items-center justify-between">
+                <div>
+                  <span class="text-[11px] font-mono uppercase text-emerald-400 block font-semibold">Total Ventas Diarias Conciliadas</span>
+                  <span class="text-xs text-zinc-400">Listo para consolidar en el resumen mensual de gastos</span>
+                </div>
+                <div class="text-xl sm:text-2xl font-mono font-bold text-emerald-400">
+                  ${{ granTotal | number }} COP
+                </div>
+              </div>
+
+              <!-- Control de Calidad con Supervisión Humana -->
+              <div class="rounded-xl border border-white/10 bg-[#070710] p-4 text-xs space-y-3">
+                <div class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-bold">⚠️</span>
+                  <p class="text-zinc-300 text-xs leading-relaxed">
+                    <strong class="text-white">Principio de Responsabilidad Tensor:</strong> La IA asiste la digitación pero nunca sustituye la supervisión del comerciante. El usuario revisa y aprueba cada cifra para evitar inconsistencias contables.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  (click)="toggleVerification()"
+                  class="button-ghost text-xs w-full !h-9"
+                >
+                  <span *ngIf="!isHumanVerified">Marcar Todos los Registros como Verificados por Humano</span>
+                  <span *ngIf="isHumanVerified" class="text-emerald-400">✓ Registros Verificados y Aprobados</span>
+                </button>
+              </div>
+            </div>
           </div>
+
+          <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-zinc-400">
+            <span>¿Interesado en implementar esto en tu negocio?</span>
+            <a routerLink="/contacto" class="text-quantum hover:underline">Cotizar Solución →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEMO 2: CALCULADOR DE PRESUPUESTOS (SOFTWARE Y TUTORÍAS) -->
+    <div *ngIf="currentTab === 'cotizador'" class="mb-24">
+      <div class="mb-10 text-left max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-quantum/30 bg-quantum/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-quantum mb-3">
+          <span class="h-1.5 w-1.5 rounded-full bg-quantum animate-pulse"></span>
+          Transparencia Total
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white font-display">
+          Calculador de Presupuestos & Planes Tensor
+        </h2>
+        <p class="text-zinc-400 text-sm sm:text-base mt-2 leading-relaxed">
+          Nuestra política de precios se basa en el esfuerzo real de desarrollo y en compensaciones justas para tutores. Utiliza este simulador para estimar tu inversión en pesos colombianos.
+        </p>
+      </div>
+
+      <!-- Selector de División en el Cotizador -->
+      <div class="flex gap-4 mb-8">
+        <button
+          type="button"
+          (click)="calcDivision = 'tech'"
+          [ngClass]="calcDivision === 'tech' ? 'border-quantum text-white bg-quantum/10 shadow-[0_0_20px_rgba(0,229,255,0.2)]' : 'border-white/10 text-zinc-400 bg-white/[0.02]'"
+          class="flex-1 py-3 px-5 rounded-xl border text-xs sm:text-sm font-mono uppercase tracking-wider transition-all"
+        >
+          💻 Estimar Proyecto de Software / Automatización
+        </button>
+        <button
+          type="button"
+          (click)="calcDivision = 'edu'"
+          [ngClass]="calcDivision === 'edu' ? 'border-quantum text-white bg-quantum/10 shadow-[0_0_20px_rgba(0,229,255,0.2)]' : 'border-white/10 text-zinc-400 bg-white/[0.02]'"
+          class="flex-1 py-3 px-5 rounded-xl border text-xs sm:text-sm font-mono uppercase tracking-wider transition-all"
+        >
+          🎓 Estimar Paquete de Tutorías Académicas
+        </button>
+      </div>
+
+      <!-- Formulario & Resultado Tech -->
+      <div *ngIf="calcDivision === 'tech'" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-7 glass-panel p-8 space-y-6">
+          <h3 class="text-xl font-bold text-white font-display mb-4">Parámetros del Proyecto Tecnológico</h3>
 
           <div>
-            <h4 class="mb-4 text-emerald-400 text-xs sm:text-sm font-semibold tracking-wide">PROYECCIÓN RESULTANTE (CURVA DE LIQUIDEZ)</h4>
-            <div class="mb-6 text-xs leading-loose text-zinc-300 space-y-1">
-              <p class="text-zinc-400">&gt; Calculando trayectoria de fase continua...</p>
-              <p>&gt; Saldo Día 30: <span class="text-white font-bold">$ 54.150.000 COP (Base)</span></p>
-              <p>&gt; Saldo Día 60: <span class="text-cyan-300 font-bold">$ 61.800.000 COP (Reposición)</span></p>
-              <p>&gt; Saldo Día 90: <span class="text-emerald-400 font-bold">$ 71.200.000 COP (Superávit)</span></p>
+            <label class="block text-xs font-mono uppercase text-zinc-400 mb-2">Alcance del Proyecto</label>
+            <div class="space-y-3">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-white/5 bg-white/[0.02] cursor-pointer hover:border-quantum/30">
+                <input type="radio" name="techScope" value="piloto" [(ngModel)]="techScope" class="accent-cyan-400">
+                <div>
+                  <strong class="text-white text-xs block">Proyecto Piloto Sencillo (Recomendado para validación)</strong>
+                  <span class="text-zinc-400 text-xs">Digitalización de registros en papel o automatización puntual de reportes (aprox. 12h de desarrollo).</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-white/5 bg-white/[0.02] cursor-pointer hover:border-quantum/30">
+                <input type="radio" name="techScope" value="medio" [(ngModel)]="techScope" class="accent-cyan-400">
+                <div>
+                  <strong class="text-white text-xs block">Sistema de Control Operativo Intermedio</strong>
+                  <span class="text-zinc-400 text-xs">Módulos básicos de inventario, registro de ventas, gastos y cuentas por cobrar.</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-white/5 bg-white/[0.02] cursor-pointer hover:border-quantum/30">
+                <input type="radio" name="techScope" value="personalizado" [(ngModel)]="techScope" class="accent-cyan-400">
+                <div>
+                  <strong class="text-white text-xs block">Desarrollo Web o Aplicación a Medida</strong>
+                  <span class="text-zinc-400 text-xs">Herramienta web personalizada con múltiples interfaces y flujos de automatización integrados.</span>
+                </div>
+              </label>
             </div>
           </div>
-          
-          <div class="mt-4">
-            <div class="text-[11px] uppercase tracking-wider text-zinc-400 mb-3">Gráfico de Dispersión / Continuidad</div>
-            <div class="flex items-end gap-3 sm:gap-4 h-[120px] border-b border-l border-white/10 px-4 pb-2">
-              <div class="flex-1 bg-quantum/40 rounded-t-sm h-[40%] transition-all duration-700" title="Día 0"></div>
-              <div class="flex-1 bg-quantum/60 rounded-t-sm h-[55%] transition-all duration-700" title="Día 30"></div>
-              <div class="flex-1 bg-quantum/80 rounded-t-sm h-[65%] transition-all duration-700" title="Día 60"></div>
-              <div class="flex-1 bg-emerald-400 rounded-t-sm h-[80%] transition-all duration-700 shadow-[0_0_15px_rgba(52,211,153,0.5)]" title="Día 90"></div>
-            </div>
-            <p class="text-[11px] text-emerald-400/90 mt-4 font-mono">✓ Cero riesgo de iliquidez a 90 días | Tolerancia a impago: 28.4%</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Demo 2: NLP Classifier -->
-    <div class="mb-12">
-      <div class="mb-8">
-        <div class="inline-flex items-center gap-2 rounded-full border border-quantum/30 bg-quantum/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-quantum mb-3">
-          <span class="h-1.5 w-1.5 rounded-full bg-quantum animate-pulse"></span>
-          Demo Interactiva 02
-        </div>
-        <h2 class="section-title text-2xl sm:text-3xl md:text-4xl text-left">Clasificador Semántico de Mensajería (NLP & RAG)</h2>
-        <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-3xl">Enrutamiento automático de solicitudes entrantes hacia el área correcta con extracción de entidades.</p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- Email Input -->
-        <div class="glass-panel p-8 sm:p-10">
-          <div class="flex justify-between items-center mb-6 border-b border-white/[0.06] pb-4">
-            <h4 class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold">Mensaje Entrante Simulado</h4>
-            <span class="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono uppercase text-zinc-300">WhatsApp API</span>
-          </div>
-          
-          <div class="rounded-xl border border-white/10 bg-[#06060c] p-6 mb-6 text-xs sm:text-sm font-sans space-y-2">
-            <p class="text-zinc-400"><strong class="text-zinc-200">De:</strong> compras&#64;distribuidoranarino.com</p>
-            <p class="text-zinc-400"><strong class="text-zinc-200">Asunto:</strong> Urgente: Disponibilidad de 250 unidades y cotización</p>
-            <div class="mt-4 pt-4 border-t border-white/[0.06] text-zinc-300 leading-relaxed italic">
-              "Buenos días equipo, requerimos confirmar si tienen stock de 250 unidades del ítem #A-42 para despacho inmediato en Pasto y cuál es el descuento por pago de contado. Quedamos atentos para emitir la orden de compra hoy mismo."
-            </div>
-          </div>
-        </div>
-
-        <!-- Output NLP Terminal -->
-        <div class="glass-panel p-8 sm:p-10 font-mono">
-          <div class="flex items-center gap-2 border-b border-white/[0.06] pb-4 mb-6">
-            <div class="h-2.5 w-2.5 rounded-full bg-rose-500/80"></div>
-            <div class="h-2.5 w-2.5 rounded-full bg-amber-500/80"></div>
-            <div class="h-2.5 w-2.5 rounded-full bg-emerald-500/80"></div>
-            <span class="text-[11px] text-zinc-400 ml-2">agent://nlp-classifier</span>
-          </div>
-
-          <h4 class="mb-5 text-emerald-400 text-xs sm:text-sm font-semibold tracking-wide">ANÁLISIS SEMÁNTICO EN TIEMPO REAL</h4>
-          
-          <div class="space-y-4">
-            <div>
-              <span class="text-zinc-400 text-[11px] block mb-1">Intención Primaria:</span>
-              <strong class="text-white text-base font-sans">Consulta Comercial / Venta Mayorista</strong>
-            </div>
-            
-            <div class="grid grid-cols-2 gap-4">
-              <div class="rounded-xl border border-white/5 bg-white/[0.02] p-3">
-                <span class="text-zinc-400 text-[10px] uppercase block mb-1">Score de Confianza</span>
-                <strong class="text-emerald-400 text-base font-mono">98.6%</strong>
+          <div class="pt-4 border-t border-white/5">
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-white/5 bg-white/[0.02] cursor-pointer hover:border-quantum/30">
+              <input type="checkbox" [(ngModel)]="includeMaintenance" class="accent-cyan-400 h-4 w-4">
+              <div>
+                <strong class="text-white text-xs block">Incluir Soporte y Mantenimiento Mensual Voluntario</strong>
+                <span class="text-zinc-400 text-xs">Acompañamiento correctivo, ajustes de datos y soporte continuo ($180.000 COP/mes).</span>
               </div>
-              <div class="rounded-xl border border-white/5 bg-white/[0.02] p-3">
-                <span class="text-zinc-400 text-[10px] uppercase block mb-1">Urgencia Detectada</span>
-                <strong class="text-amber-400 text-base font-mono">ALTA (Mismo Día)</strong>
+            </label>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 glass-panel p-8 flex flex-col justify-between ring-1 ring-quantum/30">
+          <div>
+            <div class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold mb-2">Cotización Estimada</div>
+            <h4 class="text-2xl font-bold text-white font-display mb-6">Desglose de Inversión</h4>
+
+            <div class="space-y-4 font-mono text-xs">
+              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+                <span>Desarrollo del Proyecto:</span>
+                <strong class="text-white">${{ techPrice | number }} COP</strong>
+              </div>
+              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+                <span>Anticipo Inicial (50%):</span>
+                <strong class="text-cyan-300">${{ (techPrice / 2) | number }} COP</strong>
+              </div>
+              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+                <span>Saldo contra Entrega y Aceptación (50%):</span>
+                <strong class="text-cyan-300">${{ (techPrice / 2) | number }} COP</strong>
+              </div>
+              <div *ngIf="includeMaintenance" class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+                <span>Mantenimiento Mensual Opcional:</span>
+                <strong class="text-emerald-400">+ ${{ techMaintenance | number }} COP/mes</strong>
               </div>
             </div>
 
-            <div>
-              <span class="text-zinc-400 text-[11px] block mb-2">Entidades Extraídas por el Modelo:</span>
-              <ul class="text-xs space-y-1.5 rounded-xl border border-white/5 bg-[#06060c] p-4 text-zinc-300">
-                <li><span class="text-quantum font-semibold">Cantidad:</span> 250 unidades</li>
-                <li><span class="text-quantum font-semibold">Producto:</span> Ítem #A-42</li>
-                <li><span class="text-quantum font-semibold">Destino:</span> San Juan de Pasto</li>
-              </ul>
+            <div class="mt-8 rounded-xl bg-white/[0.03] border border-white/10 p-4">
+              <span class="text-[11px] font-mono uppercase text-zinc-400 block mb-1">Garantía de Compromiso</span>
+              <p class="text-xs text-zinc-300 font-sans leading-relaxed">
+                Cada proyecto incluye levantamiento de requisitos, pruebas de calidad, capacitación al personal y delimitación estricta de tareas.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <a routerLink="/contacto" class="button-primary text-xs w-full text-center">
+              Solicitar Propuesta para este Proyecto
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario & Resultado Edu -->
+      <div *ngIf="calcDivision === 'edu'" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-7 glass-panel p-8 space-y-6">
+          <h3 class="text-xl font-bold text-white font-display mb-4">Configurar Plan de Tutorías</h3>
+
+          <!-- Nivel Académico -->
+          <div>
+            <label class="block text-xs font-mono uppercase text-zinc-400 mb-2">Nivel Académico del Estudiante</label>
+            <div class="grid grid-cols-3 gap-3">
+              <button
+                type="button"
+                (click)="eduLevel = 'primaria'"
+                [ngClass]="eduLevel === 'primaria' ? 'border-quantum bg-quantum/10 text-white' : 'border-white/10 text-zinc-400'"
+                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase"
+              >
+                Primaria
+              </button>
+              <button
+                type="button"
+                (click)="eduLevel = 'bachillerato'"
+                [ngClass]="eduLevel === 'bachillerato' ? 'border-quantum bg-quantum/10 text-white' : 'border-white/10 text-zinc-400'"
+                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase"
+              >
+                Bachillerato
+              </button>
+              <button
+                type="button"
+                (click)="eduLevel = 'universidad'"
+                [ngClass]="eduLevel === 'universidad' ? 'border-quantum bg-quantum/10 text-white' : 'border-white/10 text-zinc-400'"
+                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase"
+              >
+                Universidad
+              </button>
+            </div>
+          </div>
+
+          <!-- Modalidad -->
+          <div>
+            <label class="block text-xs font-mono uppercase text-zinc-400 mb-2">Modalidad de Tutoría</label>
+            <div class="grid grid-cols-2 gap-3">
+              <button
+                type="button"
+                (click)="eduModalidad = 'virtual'"
+                [ngClass]="eduModalidad === 'virtual' ? 'border-quantum bg-quantum/10 text-white' : 'border-white/10 text-zinc-400'"
+                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase"
+              >
+                🌐 Virtual (Online)
+              </button>
+              <button
+                type="button"
+                (click)="eduModalidad = 'presencial'"
+                [ngClass]="eduModalidad === 'presencial' ? 'border-quantum bg-quantum/10 text-white' : 'border-white/10 text-zinc-400'"
+                class="py-2.5 px-3 rounded-xl border text-xs font-mono uppercase"
+              >
+                📍 Presencial (Pasto)
+              </button>
+            </div>
+          </div>
+
+          <!-- Número de Sesiones -->
+          <div>
+            <label class="block text-xs font-mono uppercase text-zinc-400 mb-2">
+              Número de Horas / Sesiones: <span class="text-quantum font-bold">{{ eduSessions }} horas</span>
+            </label>
+            <input
+              type="range"
+              min="1"
+              max="20"
+              step="1"
+              [(ngModel)]="eduSessions"
+              class="w-full accent-cyan-400"
+            />
+            <div class="flex justify-between text-[11px] font-mono text-zinc-500 mt-1">
+              <span>1 hora (sesión individual)</span>
+              <span>5 horas (refuerzo)</span>
+              <span>10 horas (paquete mensual)</span>
+              <span>20 horas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 glass-panel p-8 flex flex-col justify-between ring-1 ring-quantum/30">
+          <div>
+            <div class="font-mono text-xs uppercase tracking-widest text-quantum font-semibold mb-2">Tarifa Estimada</div>
+            <h4 class="text-2xl font-bold text-white font-display mb-6">Resumen de Tutoría</h4>
+
+            <div class="space-y-4 font-mono text-xs">
+              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+                <span>Valor por Hora:</span>
+                <strong class="text-white">${{ pricePerHour | number }} COP / hora</strong>
+              </div>
+              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+                <span>Cantidad de Horas:</span>
+                <strong class="text-white">{{ eduSessions }} horas</strong>
+              </div>
+              <div *ngIf="eduSessions >= 5" class="flex justify-between border-b border-white/5 pb-2 text-emerald-400">
+                <span>Descuento por Paquete:</span>
+                <strong>{{ eduSessions >= 10 ? '10% OFF' : '5% OFF' }}</strong>
+              </div>
+              <div class="flex justify-between border-b border-white/5 pb-2 text-zinc-300">
+                <span>Inversión Total Estimada:</span>
+                <strong class="text-xl text-emerald-400">${{ totalEduPrice | number }} COP</strong>
+              </div>
             </div>
 
-            <div class="border-t border-white/[0.06] pt-4 text-xs text-zinc-300 space-y-1">
-              <p class="text-zinc-400 text-[10px] uppercase tracking-wider mb-2">Acción Automatizada Ejecutada:</p>
-              <p>➜ Tarjeta sincronizada en CRM: 'Cotización en Proceso'</p>
-              <p>➜ Enrutado a: Asesor Comercial de Cierres</p>
-              <p class="text-emerald-400">➜ Notificación WhatsApp enviada al responsable</p>
+            <div class="mt-8 rounded-xl bg-white/[0.03] border border-white/10 p-4">
+              <span class="text-[11px] font-mono uppercase text-zinc-400 block mb-1">Garantía Pedagógica</span>
+              <p class="text-xs text-zinc-300 font-sans leading-relaxed">
+                Tutor calificado y verificado en la materia, seguimiento continuo de aprendizaje y reprogramación flexible con aviso previo.
+              </p>
             </div>
+          </div>
+
+          <div class="mt-8">
+            <a routerLink="/contacto" class="button-primary text-xs w-full text-center">
+              Agendar Tutoría con Este Plan
+            </a>
           </div>
         </div>
       </div>
@@ -169,4 +460,3 @@
 
   </div>
 </div>
-
